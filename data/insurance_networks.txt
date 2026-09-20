@@ -1,0 +1,2 @@
+AIA,AIA Malaysia,80.0,true
+GE,Great Eastern,70.0,true

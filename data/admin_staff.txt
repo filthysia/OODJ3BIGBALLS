@@ -1,0 +1,1 @@
+AS001,Nadia Ismail,930303-10-2244,FEMALE,012-7778888,frontdesk@apumc.edu.my,Seri Kembangan  Selangor,admin123,ADMIN,2022-02-01,4500.0,Front Desk  Level 1
