@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="APU Medical Centre &#183; Patient Portal"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="3"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="pnlSidebar" min="-2" pref="230" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+              <Component id="pnlContent" min="-2" pref="1050" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="pnlSidebar" alignment="0" min="-2" pref="720" max="-2" attributes="0"/>
+          <Component id="pnlContent" alignment="0" pref="720" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="pnlSidebar">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblBrand" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavDashboard" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavAppointments" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavBooking" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavHistory" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavFeedback" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavProfile" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnLogout" min="-2" pref="198" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="lblBrand" min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="btnNavDashboard" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavAppointments" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavBooking" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavHistory" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavFeedback" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavProfile" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="btnLogout" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblBrand">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="16" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="2a" green="3d" red="b" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#8853;  APU Medical"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavDashboard">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="Dashboard"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavDashboardActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavAppointments">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="My Appointments"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavAppointmentsActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavBooking">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Book Appointment"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavBookingActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavHistory">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Medical History"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavHistoryActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavFeedback">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Rate a Visit"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavFeedbackActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavProfile">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="My Profile"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavProfileActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnLogout">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#8592; Log out"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLogoutActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pnlContent">
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+      <SubComponents>
+
+        <Container class="javax.swing.JPanel" name="cardDashboard">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="dashboard"/>
+            </Constraint>
+          </Constraints>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblDashTitle" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="lblUpcoming" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="lblActiveRx" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="lblPendingLab" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="scrollUpcoming" pref="900" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblDashTitle" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="lblUpcoming" min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="lblActiveRx" min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="lblPendingLab" min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="scrollUpcoming" pref="500" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblDashTitle">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor"><Font name="Segoe UI" size="18" style="1"/></Property>
+                <Property name="text" type="java.lang.String" value="Dashboard"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblUpcoming">
+              <Properties><Property name="text" type="java.lang.String" value="Upcoming appointments: 0"/></Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblActiveRx">
+              <Properties><Property name="text" type="java.lang.String" value="Active prescriptions: 0"/></Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPendingLab">
+              <Properties><Property name="text" type="java.lang.String" value="Pending lab requests: 0"/></Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="scrollUpcoming">
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tblUpcoming"/>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+
+        <Container class="javax.swing.JPanel" name="cardAppointments">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="appointments"/>
+            </Constraint>
+          </Constraints>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblApptTitle" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="scrollAppointments" pref="900" max="32767" attributes="0"/>
+                          <Component id="lblRescheduleDate" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="txtRescheduleDate" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="lblRescheduleTime" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="txtRescheduleTime" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="btnReschedule" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="btnCancel" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="lblApptMessage" min="-2" pref="600" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblApptTitle" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="scrollAppointments" pref="330" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="lblRescheduleDate" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtRescheduleDate" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblRescheduleTime" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtRescheduleTime" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="btnReschedule" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="btnCancel" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="lblApptMessage" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblApptTitle">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor"><Font name="Segoe UI" size="18" style="1"/></Property>
+                <Property name="text" type="java.lang.String" value="My Appointments"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="scrollAppointments">
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tblAppointments"/>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="lblRescheduleDate">
+              <Properties><Property name="text" type="java.lang.String" value="New Date (YYYY-MM-DD), for Reschedule:"/></Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtRescheduleDate"/>
+            <Component class="javax.swing.JLabel" name="lblRescheduleTime">
+              <Properties><Property name="text" type="java.lang.String" value="New Start Time (HH:MM):"/></Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtRescheduleTime"/>
+            <Component class="javax.swing.JButton" name="btnReschedule">
+              <Properties><Property name="text" type="java.lang.String" value="Reschedule Selected"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRescheduleActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnCancel">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor"><Color blue="4f" green="4a" red="c2" type="rgb"/></Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor"><Color blue="ff" green="ff" red="ff" type="rgb"/></Property>
+                <Property name="text" type="java.lang.String" value="Cancel Selected"/>
+              </Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblApptMessage">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor"><Color blue="52" green="7a" red="15" type="rgb"/></Property>
+                <Property name="text" type="java.lang.String" value=" "/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+
+        <Container class="javax.swing.JPanel" name="cardBooking">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="booking"/>
+            </Constraint>
+          </Constraints>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblBookingTitle" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="scrollDoctors" pref="900" max="32767" attributes="0"/>
+                          <Component id="lblBookDate" min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="txtBookDate" min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="btnFindSlots" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="scrollSlots" pref="900" max="32767" attributes="0"/>
+                          <Component id="btnBookSlot" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="lblBookingMessage" min="-2" pref="700" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblBookingTitle" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="scrollDoctors" pref="150" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblBookDate" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtBookDate" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="btnFindSlots" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="scrollSlots" pref="150" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="btnBookSlot" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblBookingMessage" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblBookingTitle">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor"><Font name="Segoe UI" size="18" style="1"/></Property>
+                <Property name="text" type="java.lang.String" value="Book Appointment"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="scrollDoctors">
+              <SubComponents><Component class="javax.swing.JTable" name="tblDoctors"/></SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="lblBookDate">
+              <Properties><Property name="text" type="java.lang.String" value="Date to check (YYYY-MM-DD):"/></Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtBookDate"/>
+            <Component class="javax.swing.JButton" name="btnFindSlots">
+              <Properties><Property name="text" type="java.lang.String" value="Find Open Slots"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFindSlotsActionPerformed"/></Events>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="scrollSlots">
+              <SubComponents><Component class="javax.swing.JTable" name="tblSlots"/></SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="btnBookSlot">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor"><Color blue="52" green="7a" red="15" type="rgb"/></Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor"><Color blue="ff" green="ff" red="ff" type="rgb"/></Property>
+                <Property name="text" type="java.lang.String" value="Book Selected Slot"/>
+              </Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBookSlotActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblBookingMessage">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor"><Color blue="52" green="7a" red="15" type="rgb"/></Property>
+                <Property name="text" type="java.lang.String" value=" "/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+
+        <Container class="javax.swing.JPanel" name="cardHistory">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="history"/>
+            </Constraint>
+          </Constraints>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblHistoryTitle" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="scrollHistoryText" pref="900" max="32767" attributes="0"/>
+                          <Component id="scrollPrescriptions" pref="900" max="32767" attributes="0"/>
+                          <Component id="btnViewItems" min="-2" pref="220" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblHistoryTitle" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="scrollHistoryText" pref="330" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="scrollPrescriptions" pref="130" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="btnViewItems" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblHistoryTitle">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor"><Font name="Segoe UI" size="18" style="1"/></Property>
+                <Property name="text" type="java.lang.String" value="Medical History"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="scrollHistoryText">
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="txtHistory">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor"><Font name="Consolas" size="12" style="0"/></Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="scrollPrescriptions">
+              <SubComponents><Component class="javax.swing.JTable" name="tblPrescriptions"/></SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="btnViewItems">
+              <Properties><Property name="text" type="java.lang.String" value="View Items"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewItemsActionPerformed"/></Events>
+            </Component>
+          </SubComponents>
+        </Container>
+
+        <Container class="javax.swing.JPanel" name="cardFeedback">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="feedback"/>
+            </Constraint>
+          </Constraints>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblFeedbackTitle" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="radioFromVisit" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="scrollCompleted" pref="900" max="32767" attributes="0"/>
+                          <Component id="radioDirect" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="lblDirectDoctorId" min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="txtDirectDoctorId" min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="lblDoctorRating" min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="txtDoctorRating" min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="lblVisitRating" min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="txtVisitRating" min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="lblComment" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="txtComment" min="-2" pref="700" max="-2" attributes="0"/>
+                          <Component id="btnSubmitFeedback" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="lblFeedbackMessage" min="-2" pref="700" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblFeedbackTitle" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="radioFromVisit" min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="scrollCompleted" pref="110" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="radioDirect" min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="lblDirectDoctorId" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtDirectDoctorId" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="lblDoctorRating" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtDoctorRating" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblVisitRating" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtVisitRating" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblComment" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtComment" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="btnSubmitFeedback" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblFeedbackMessage" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblFeedbackTitle">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor"><Font name="Segoe UI" size="18" style="1"/></Property>
+                <Property name="text" type="java.lang.String" value="Rate a Visit"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="radioFromVisit">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Rate from a completed visit (select a row below)"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="scrollCompleted">
+              <SubComponents><Component class="javax.swing.JTable" name="tblCompleted"/></SubComponents>
+            </Container>
+            <Component class="javax.swing.JRadioButton" name="radioDirect">
+              <Properties><Property name="text" type="java.lang.String" value="Rate a doctor directly (no appointment)"/></Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblDirectDoctorId">
+              <Properties><Property name="text" type="java.lang.String" value="Doctor ID (only for direct rating):"/></Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtDirectDoctorId"/>
+            <Component class="javax.swing.JLabel" name="lblDoctorRating">
+              <Properties><Property name="text" type="java.lang.String" value="Doctor Rating (1-5):"/></Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtDoctorRating"/>
+            <Component class="javax.swing.JLabel" name="lblVisitRating">
+              <Properties><Property name="text" type="java.lang.String" value="Visit Rating (1-5):"/></Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtVisitRating"/>
+            <Component class="javax.swing.JLabel" name="lblComment">
+              <Properties><Property name="text" type="java.lang.String" value="Comment:"/></Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtComment"/>
+            <Component class="javax.swing.JButton" name="btnSubmitFeedback">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor"><Color blue="52" green="7a" red="15" type="rgb"/></Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor"><Color blue="ff" green="ff" red="ff" type="rgb"/></Property>
+                <Property name="text" type="java.lang.String" value="Submit Feedback"/>
+              </Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSubmitFeedbackActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblFeedbackMessage">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor"><Color blue="52" green="7a" red="15" type="rgb"/></Property>
+                <Property name="text" type="java.lang.String" value=" "/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+
+        <Container class="javax.swing.JPanel" name="cardProfile">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="profile"/>
+            </Constraint>
+          </Constraints>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblProfileTitle" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="lblName" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="txtName" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="lblPhone" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="txtPhone" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="lblEmail" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="txtEmail" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="lblAddress" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="txtAddress" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="lblBloodType" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="txtBloodType" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="lblAllergies" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="txtAllergies" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="btnSaveProfile" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="lblCurrentPassword" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="txtCurrentPassword" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="lblNewPassword" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="txtNewPassword" min="-2" pref="332" max="-2" attributes="0"/>
+                          <Component id="btnChangePassword" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="lblProfileMessage" min="-2" pref="500" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblProfileTitle" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="lblName" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtName" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblPhone" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtPhone" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblEmail" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtEmail" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblAddress" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtAddress" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblBloodType" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtBloodType" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblAllergies" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtAllergies" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="btnSaveProfile" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="lblCurrentPassword" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtCurrentPassword" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblNewPassword" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtNewPassword" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="btnChangePassword" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="lblProfileMessage" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblProfileTitle">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor"><Font name="Segoe UI" size="18" style="1"/></Property>
+                <Property name="text" type="java.lang.String" value="My Profile"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblName"><Properties><Property name="text" type="java.lang.String" value="Full Name"/></Properties></Component>
+            <Component class="javax.swing.JTextField" name="txtName"/>
+            <Component class="javax.swing.JLabel" name="lblPhone"><Properties><Property name="text" type="java.lang.String" value="Phone"/></Properties></Component>
+            <Component class="javax.swing.JTextField" name="txtPhone"/>
+            <Component class="javax.swing.JLabel" name="lblEmail"><Properties><Property name="text" type="java.lang.String" value="Email"/></Properties></Component>
+            <Component class="javax.swing.JTextField" name="txtEmail"/>
+            <Component class="javax.swing.JLabel" name="lblAddress"><Properties><Property name="text" type="java.lang.String" value="Address"/></Properties></Component>
+            <Component class="javax.swing.JTextField" name="txtAddress"/>
+            <Component class="javax.swing.JLabel" name="lblBloodType"><Properties><Property name="text" type="java.lang.String" value="Blood Type"/></Properties></Component>
+            <Component class="javax.swing.JTextField" name="txtBloodType"/>
+            <Component class="javax.swing.JLabel" name="lblAllergies"><Properties><Property name="text" type="java.lang.String" value="Allergies"/></Properties></Component>
+            <Component class="javax.swing.JTextField" name="txtAllergies"/>
+            <Component class="javax.swing.JButton" name="btnSaveProfile">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor"><Color blue="52" green="7a" red="15" type="rgb"/></Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor"><Color blue="ff" green="ff" red="ff" type="rgb"/></Property>
+                <Property name="text" type="java.lang.String" value="Save Changes"/>
+              </Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveProfileActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblCurrentPassword"><Properties><Property name="text" type="java.lang.String" value="Current Password"/></Properties></Component>
+            <Component class="javax.swing.JPasswordField" name="txtCurrentPassword"/>
+            <Component class="javax.swing.JLabel" name="lblNewPassword"><Properties><Property name="text" type="java.lang.String" value="New Password (min 6)"/></Properties></Component>
+            <Component class="javax.swing.JPasswordField" name="txtNewPassword"/>
+            <Component class="javax.swing.JButton" name="btnChangePassword">
+              <Properties><Property name="text" type="java.lang.String" value="Change Password"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChangePasswordActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblProfileMessage">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor"><Color blue="52" green="7a" red="15" type="rgb"/></Property>
+                <Property name="text" type="java.lang.String" value=" "/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
