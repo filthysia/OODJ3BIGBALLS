@@ -95,7 +95,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="2a" green="3d" red="b" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="&#8853;  APU Medical"/>
+            <Property name="text" type="java.lang.String" value="APU Medical"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JToggleButton" name="btnNavDashboard">
@@ -170,11 +170,18 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblDashTitle" min="-2" pref="400" max="-2" attributes="0"/>
-                          <Component id="lblDashDeptCount" min="-2" pref="500" max="-2" attributes="0"/>
-                          <Component id="lblDashDoctorCount" min="-2" pref="500" max="-2" attributes="0"/>
-                          <Component id="lblDashRosterCount" min="-2" pref="500" max="-2" attributes="0"/>
-                          <Component id="lblDashShiftCount" min="-2" pref="500" max="-2" attributes="0"/>
+                          <Component id="lblWelcome" min="-2" pref="500" max="-2" attributes="0"/>
+                          <Component id="lblWelcomeSub" min="-2" pref="500" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="pnlKpiDept" min="-2" pref="230" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="pnlKpiDoctors" min="-2" pref="230" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="pnlKpiRosters" min="-2" pref="230" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="pnlKpiShifts" min="-2" pref="230" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lblRostersTitle" min="-2" pref="400" max="-2" attributes="0"/>
                           <Component id="scrollDashRosters" pref="960" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -185,61 +192,254 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="lblDashTitle" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="lblDashDeptCount" min="-2" pref="22" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                      <Component id="lblDashDoctorCount" min="-2" pref="22" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                      <Component id="lblDashRosterCount" min="-2" pref="22" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                      <Component id="lblDashShiftCount" min="-2" pref="22" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Component id="scrollDashRosters" pref="400" max="32767" attributes="0"/>
+                      <Component id="lblWelcome" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="lblWelcomeSub" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="pnlKpiDept" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="pnlKpiDoctors" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="pnlKpiRosters" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="pnlKpiShifts" min="-2" pref="80" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblRostersTitle" min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="scrollDashRosters" pref="280" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="lblDashTitle">
+            <Component class="javax.swing.JLabel" name="lblWelcome">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="18" style="1"/>
+                  <Font name="Segoe UI" size="24" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Dashboard"/>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="1a" green="18" red="16" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Welcome Back"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblDashDeptCount">
+            <Component class="javax.swing.JLabel" name="lblWelcomeSub">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="13" style="0"/>
+                  <Font name="Segoe UI" size="12" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Departments: -"/>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="8c" green="93" red="8b" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Here's what's happening at APU Medical Centre today."/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblDashDoctorCount">
+            <Container class="javax.swing.JPanel" name="pnlKpiDept">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="13" style="0"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Doctors managed: -"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblDashRosterCount">
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblKpiDeptLabel" min="-2" pref="190" max="-2" attributes="0"/>
+                              <Component id="lblKpiDeptValue" min="-2" pref="190" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="lblKpiDeptLabel" min="-2" pref="16" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Component id="lblKpiDeptValue" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="lblKpiDeptLabel">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="8c" green="93" red="8b" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Departments"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblKpiDeptValue">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="24" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="pnlKpiDoctors">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="13" style="0"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Rosters: -"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblDashShiftCount">
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblKpiDoctorsLabel" min="-2" pref="190" max="-2" attributes="0"/>
+                              <Component id="lblKpiDoctorsValue" min="-2" pref="190" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="lblKpiDoctorsLabel" min="-2" pref="16" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Component id="lblKpiDoctorsValue" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="lblKpiDoctorsLabel">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="8c" green="93" red="8b" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Doctors Managed"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblKpiDoctorsValue">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="24" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="pnlKpiRosters">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblKpiRostersLabel" min="-2" pref="190" max="-2" attributes="0"/>
+                              <Component id="lblKpiRostersValue" min="-2" pref="190" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="lblKpiRostersLabel" min="-2" pref="16" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Component id="lblKpiRostersValue" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="lblKpiRostersLabel">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="8c" green="93" red="8b" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Rosters"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblKpiRostersValue">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="24" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="pnlKpiShifts">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblKpiShiftsLabel" min="-2" pref="190" max="-2" attributes="0"/>
+                              <Component id="lblKpiShiftsValue" min="-2" pref="190" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="lblKpiShiftsLabel" min="-2" pref="16" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Component id="lblKpiShiftsValue" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="lblKpiShiftsLabel">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="8c" green="93" red="8b" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Rostered Shifts"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblKpiShiftsValue">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="24" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="lblRostersTitle">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="13" style="0"/>
+                  <Font name="Segoe UI" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Rostered shifts: -"/>
+                <Property name="text" type="java.lang.String" value="Shift Rosters"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="scrollDashRosters">

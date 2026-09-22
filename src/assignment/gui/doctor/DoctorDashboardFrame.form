@@ -98,7 +98,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="2a" green="3d" red="b" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="&#8853;  APU Medical"/>
+            <Property name="text" type="java.lang.String" value="APU Medical"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JToggleButton" name="btnNavDashboard">
@@ -182,9 +182,16 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblStatUpcoming" min="-2" pref="400" max="-2" attributes="0"/>
-                          <Component id="lblStatActiveRx" min="-2" pref="400" max="-2" attributes="0"/>
-                          <Component id="lblStatPendingLab" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="lblWelcome" min="-2" pref="500" max="-2" attributes="0"/>
+                          <Component id="lblWelcomeSub" min="-2" pref="500" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="pnlKpiUpcoming" min="-2" pref="288" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="pnlKpiActiveRx" min="-2" pref="288" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="pnlKpiPendingLab" min="-2" pref="288" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lblDashApptsTitle" min="-2" pref="400" max="-2" attributes="0"/>
                           <Component id="scrollDashAppts" pref="900" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -195,41 +202,203 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="lblStatUpcoming" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="lblWelcome" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="lblWelcomeSub" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="pnlKpiUpcoming" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="pnlKpiActiveRx" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="pnlKpiPendingLab" min="-2" pref="80" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblDashApptsTitle" min="-2" pref="22" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Component id="lblStatActiveRx" min="-2" pref="24" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Component id="lblStatPendingLab" min="-2" pref="24" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Component id="scrollDashAppts" pref="580" max="32767" attributes="0"/>
+                      <Component id="scrollDashAppts" pref="280" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="lblStatUpcoming">
+            <Component class="javax.swing.JLabel" name="lblWelcome">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="1"/>
+                  <Font name="Segoe UI" size="24" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Upcoming appointments: 0"/>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="1a" green="18" red="16" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Welcome Back"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblStatActiveRx">
+            <Component class="javax.swing.JLabel" name="lblWelcomeSub">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="1"/>
+                  <Font name="Segoe UI" size="12" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Active prescriptions issued: 0"/>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="8c" green="93" red="8b" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Here's what's happening at APU Medical Centre today."/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblStatPendingLab">
+            <Container class="javax.swing.JPanel" name="pnlKpiUpcoming">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblKpiUpcomingLabel" min="-2" pref="250" max="-2" attributes="0"/>
+                              <Component id="lblKpiUpcomingValue" min="-2" pref="250" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="lblKpiUpcomingLabel" min="-2" pref="16" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Component id="lblKpiUpcomingValue" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="lblKpiUpcomingLabel">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="8c" green="93" red="8b" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Upcoming Appointments"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblKpiUpcomingValue">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="24" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="pnlKpiActiveRx">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblKpiActiveRxLabel" min="-2" pref="250" max="-2" attributes="0"/>
+                              <Component id="lblKpiActiveRxValue" min="-2" pref="250" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="lblKpiActiveRxLabel" min="-2" pref="16" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Component id="lblKpiActiveRxValue" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="lblKpiActiveRxLabel">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="8c" green="93" red="8b" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Active Prescriptions Issued"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblKpiActiveRxValue">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="24" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="pnlKpiPendingLab">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblKpiPendingLabLabel" min="-2" pref="250" max="-2" attributes="0"/>
+                              <Component id="lblKpiPendingLabValue" min="-2" pref="250" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="lblKpiPendingLabLabel" min="-2" pref="16" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Component id="lblKpiPendingLabValue" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="lblKpiPendingLabLabel">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="8c" green="93" red="8b" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Pending Lab Requests Raised"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblKpiPendingLabValue">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="24" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="lblDashApptsTitle">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Pending lab requests raised: 0"/>
+                <Property name="text" type="java.lang.String" value="Upcoming Appointments"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="scrollDashAppts">

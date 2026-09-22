@@ -23,6 +23,9 @@ public class ManagerLoginFrame extends javax.swing.JFrame {
         setSize(980, 620);
         setResizable(false);
         setLocationRelativeTo(null);
+        java.awt.Image logoImg = new javax.swing.ImageIcon(getClass().getResource("/assignment/gui/logo.png")).getImage();
+        lblBrand.setIcon(new javax.swing.ImageIcon(logoImg.getScaledInstance(68, 40, java.awt.Image.SCALE_SMOOTH)));
+        lblBrand.setIconTextGap(10);
     }
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed

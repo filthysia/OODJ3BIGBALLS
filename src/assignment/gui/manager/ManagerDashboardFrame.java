@@ -36,6 +36,9 @@ public class ManagerDashboardFrame extends javax.swing.JFrame {
     public ManagerDashboardFrame(MedicalManager current) {
         this.current = current;
         initComponents();
+        java.awt.Image logoImg = new javax.swing.ImageIcon(getClass().getResource("/assignment/gui/logo.png")).getImage();
+        lblBrand.setIcon(new javax.swing.ImageIcon(logoImg.getScaledInstance(44, 26, java.awt.Image.SCALE_SMOOTH)));
+        lblBrand.setIconTextGap(8);
         setSize(1440, 810);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -56,25 +59,51 @@ public class ManagerDashboardFrame extends javax.swing.JFrame {
     }
 
     // ---------- dashboard ----------
+    private void buildKpiTile(javax.swing.JPanel tile, javax.swing.JLabel label, javax.swing.JLabel value) {
+        javax.swing.GroupLayout tileLayout = new javax.swing.GroupLayout(tile);
+        tile.setLayout(tileLayout);
+        tileLayout.setHorizontalGroup(
+            tileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tileLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(tileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(value, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        tileLayout.setVerticalGroup(
+            tileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tileLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(value, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+    }
+
     private void refreshDashboard() {
+        lblWelcome.setText("Welcome Back, " + current.getName());
+
         int activeDept = 0;
         List<Department> depts = departmentService.getAll();
         for (int i = 0; i < depts.size(); i++) {
             if (depts.get(i).isActive()) activeDept++;
         }
-        lblDashDeptCount.setText("Departments: " + depts.size() + " (" + activeDept + " active)");
+        lblKpiDeptLabel.setText("Departments (" + activeDept + " active)");
+        lblKpiDeptValue.setText(String.valueOf(depts.size()));
 
         List<Doctor> myDoctors = userService.doctorsForManager(current.getId());
-        lblDashDoctorCount.setText("Doctors managed: " + myDoctors.size());
+        lblKpiDoctorsValue.setText(String.valueOf(myDoctors.size()));
 
         List<ShiftRoster> rosters = rosterService.getAll();
-        lblDashRosterCount.setText("Rosters: " + rosters.size());
+        lblKpiRostersValue.setText(String.valueOf(rosters.size()));
 
         int totalShifts = 0;
         for (int i = 0; i < rosters.size(); i++) {
             totalShifts += rosterService.shiftsFor(rosters.get(i).getRosterId()).size();
         }
-        lblDashShiftCount.setText("Rostered shifts: " + totalShifts);
+        lblKpiShiftsValue.setText(String.valueOf(totalShifts));
 
         javax.swing.table.DefaultTableModel model = new javax.swing.table.DefaultTableModel(
                 new Object[]{"Roster ID", "Dept", "Week Start", "Week End", "Shifts"}, 0) {
@@ -412,11 +441,21 @@ public class ManagerDashboardFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<ShiftType> cboUpdateShiftType;
     private javax.swing.JComboBox<ShiftStatus> cboUpdateShiftStatus;
     private javax.swing.JLabel lblBrand;
-    private javax.swing.JLabel lblDashDeptCount;
-    private javax.swing.JLabel lblDashDoctorCount;
-    private javax.swing.JLabel lblDashRosterCount;
-    private javax.swing.JLabel lblDashShiftCount;
-    private javax.swing.JLabel lblDashTitle;
+    private javax.swing.JLabel lblWelcome;
+    private javax.swing.JLabel lblWelcomeSub;
+    private javax.swing.JPanel pnlKpiDept;
+    private javax.swing.JLabel lblKpiDeptLabel;
+    private javax.swing.JLabel lblKpiDeptValue;
+    private javax.swing.JPanel pnlKpiDoctors;
+    private javax.swing.JLabel lblKpiDoctorsLabel;
+    private javax.swing.JLabel lblKpiDoctorsValue;
+    private javax.swing.JPanel pnlKpiRosters;
+    private javax.swing.JLabel lblKpiRostersLabel;
+    private javax.swing.JLabel lblKpiRostersValue;
+    private javax.swing.JPanel pnlKpiShifts;
+    private javax.swing.JLabel lblKpiShiftsLabel;
+    private javax.swing.JLabel lblKpiShiftsValue;
+    private javax.swing.JLabel lblRostersTitle;
     private javax.swing.JLabel lblDeptCode;
     private javax.swing.JLabel lblDeptDesc;
     private javax.swing.JLabel lblDeptFee;
@@ -497,13 +536,24 @@ public class ManagerDashboardFrame extends javax.swing.JFrame {
         btnNavProfile = new javax.swing.JToggleButton();
         btnLogout = new javax.swing.JButton();
         pnlContent = new javax.swing.JPanel();
+        pnlContent.setBackground(new java.awt.Color(250, 250, 248));
 
         cardDashboard = new javax.swing.JPanel();
-        lblDashTitle = new javax.swing.JLabel();
-        lblDashDeptCount = new javax.swing.JLabel();
-        lblDashDoctorCount = new javax.swing.JLabel();
-        lblDashRosterCount = new javax.swing.JLabel();
-        lblDashShiftCount = new javax.swing.JLabel();
+        lblWelcome = new javax.swing.JLabel();
+        lblWelcomeSub = new javax.swing.JLabel();
+        pnlKpiDept = new javax.swing.JPanel();
+        lblKpiDeptLabel = new javax.swing.JLabel();
+        lblKpiDeptValue = new javax.swing.JLabel();
+        pnlKpiDoctors = new javax.swing.JPanel();
+        lblKpiDoctorsLabel = new javax.swing.JLabel();
+        lblKpiDoctorsValue = new javax.swing.JLabel();
+        pnlKpiRosters = new javax.swing.JPanel();
+        lblKpiRostersLabel = new javax.swing.JLabel();
+        lblKpiRostersValue = new javax.swing.JLabel();
+        pnlKpiShifts = new javax.swing.JPanel();
+        lblKpiShiftsLabel = new javax.swing.JLabel();
+        lblKpiShiftsValue = new javax.swing.JLabel();
+        lblRostersTitle = new javax.swing.JLabel();
         scrollDashRosters = new javax.swing.JScrollPane();
         tblDashRosters = new javax.swing.JTable();
 
@@ -604,7 +654,7 @@ public class ManagerDashboardFrame extends javax.swing.JFrame {
 
         lblBrand.setFont(new java.awt.Font("Segoe UI", 1, 16));
         lblBrand.setForeground(new java.awt.Color(11, 61, 42));
-        lblBrand.setText("⊕  APU Medical");
+        lblBrand.setText("APU Medical");
 
         btnNavDashboard.setSelected(true);
         btnNavDashboard.setText("Dashboard");
@@ -676,16 +726,52 @@ public class ManagerDashboardFrame extends javax.swing.JFrame {
         pnlContent.setLayout(new java.awt.CardLayout());
 
         // ---- dashboard card ----
-        lblDashTitle.setFont(new java.awt.Font("Segoe UI", 1, 18));
-        lblDashTitle.setText("Dashboard");
-        lblDashDeptCount.setFont(new java.awt.Font("Segoe UI", 0, 13));
-        lblDashDeptCount.setText("Departments: -");
-        lblDashDoctorCount.setFont(new java.awt.Font("Segoe UI", 0, 13));
-        lblDashDoctorCount.setText("Doctors managed: -");
-        lblDashRosterCount.setFont(new java.awt.Font("Segoe UI", 0, 13));
-        lblDashRosterCount.setText("Rosters: -");
-        lblDashShiftCount.setFont(new java.awt.Font("Segoe UI", 0, 13));
-        lblDashShiftCount.setText("Rostered shifts: -");
+        cardDashboard.setBackground(new java.awt.Color(250, 250, 248));
+
+        lblWelcome.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        lblWelcome.setForeground(new java.awt.Color(22, 24, 26));
+        lblWelcome.setText("Welcome Back");
+
+        lblWelcomeSub.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        lblWelcomeSub.setForeground(new java.awt.Color(139, 147, 140));
+        lblWelcomeSub.setText("Here's what's happening at APU Medical Centre today.");
+
+        pnlKpiDept.setBackground(new java.awt.Color(255, 255, 255));
+        lblKpiDeptLabel.setForeground(new java.awt.Color(139, 147, 140));
+        lblKpiDeptLabel.setText("Departments");
+        lblKpiDeptValue.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        lblKpiDeptValue.setText("0");
+        buildKpiTile(pnlKpiDept, lblKpiDeptLabel, lblKpiDeptValue);
+
+        pnlKpiDoctors.setBackground(new java.awt.Color(255, 255, 255));
+        lblKpiDoctorsLabel.setForeground(new java.awt.Color(139, 147, 140));
+        lblKpiDoctorsLabel.setText("Doctors Managed");
+        lblKpiDoctorsValue.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        lblKpiDoctorsValue.setText("0");
+        buildKpiTile(pnlKpiDoctors, lblKpiDoctorsLabel, lblKpiDoctorsValue);
+
+        pnlKpiRosters.setBackground(new java.awt.Color(255, 255, 255));
+        lblKpiRostersLabel.setForeground(new java.awt.Color(139, 147, 140));
+        lblKpiRostersLabel.setText("Rosters");
+        lblKpiRostersValue.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        lblKpiRostersValue.setText("0");
+        buildKpiTile(pnlKpiRosters, lblKpiRostersLabel, lblKpiRostersValue);
+
+        pnlKpiShifts.setBackground(new java.awt.Color(255, 255, 255));
+        lblKpiShiftsLabel.setForeground(new java.awt.Color(139, 147, 140));
+        lblKpiShiftsLabel.setText("Rostered Shifts");
+        lblKpiShiftsValue.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        lblKpiShiftsValue.setText("0");
+        buildKpiTile(pnlKpiShifts, lblKpiShiftsLabel, lblKpiShiftsValue);
+
+        lblRostersTitle.setFont(new java.awt.Font("Segoe UI", 1, 14));
+        lblRostersTitle.setText("Shift Rosters");
+
+        tblDashRosters.setGridColor(new java.awt.Color(233, 234, 230));
+        tblDashRosters.setShowVerticalLines(false);
+        tblDashRosters.setRowHeight(30);
+        tblDashRosters.setSelectionBackground(new java.awt.Color(233, 244, 238));
+        tblDashRosters.setSelectionForeground(new java.awt.Color(22, 24, 26));
         scrollDashRosters.setViewportView(tblDashRosters);
 
         javax.swing.GroupLayout cardDashboardLayout = new javax.swing.GroupLayout(cardDashboard);
@@ -695,11 +781,17 @@ public class ManagerDashboardFrame extends javax.swing.JFrame {
             .addGroup(cardDashboardLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(cardDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDashTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDashDeptCount, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDashDoctorCount, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDashRosterCount, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDashShiftCount, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblWelcomeSub, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(cardDashboardLayout.createSequentialGroup()
+                        .addComponent(pnlKpiDept, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
+                        .addComponent(pnlKpiDoctors, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
+                        .addComponent(pnlKpiRosters, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
+                        .addComponent(pnlKpiShifts, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblRostersTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(scrollDashRosters, javax.swing.GroupLayout.DEFAULT_SIZE, 960, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -707,18 +799,20 @@ public class ManagerDashboardFrame extends javax.swing.JFrame {
             cardDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cardDashboardLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(lblDashTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addComponent(lblDashDeptCount, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(lblDashDoctorCount, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(lblDashRosterCount, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(lblDashShiftCount, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
-                .addComponent(scrollDashRosters, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(lblWelcomeSub, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(cardDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlKpiDept, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlKpiDoctors, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlKpiRosters, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlKpiShifts, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(lblRostersTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(scrollDashRosters, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                .addGap(20, 20, 20))
         );
         pnlContent.add(cardDashboard, "dashboard");
 

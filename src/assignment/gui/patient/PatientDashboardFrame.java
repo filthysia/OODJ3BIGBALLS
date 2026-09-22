@@ -45,6 +45,9 @@ public class PatientDashboardFrame extends javax.swing.JFrame {
     public PatientDashboardFrame(Patient current) {
         this.current = current;
         initComponents();
+        java.awt.Image logoImg = new javax.swing.ImageIcon(getClass().getResource("/assignment/gui/logo.png")).getImage();
+        lblBrand.setIcon(new javax.swing.ImageIcon(logoImg.getScaledInstance(44, 26, java.awt.Image.SCALE_SMOOTH)));
+        lblBrand.setIconTextGap(8);
         setSize(1440, 810);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -69,6 +72,29 @@ public class PatientDashboardFrame extends javax.swing.JFrame {
     // ===================================================================
     // Dashboard
     // ===================================================================
+    private void buildKpiTile(javax.swing.JPanel tile, javax.swing.JLabel label, javax.swing.JLabel value) {
+        javax.swing.GroupLayout tileLayout = new javax.swing.GroupLayout(tile);
+        tile.setLayout(tileLayout);
+        tileLayout.setHorizontalGroup(
+            tileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tileLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(tileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(value, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        tileLayout.setVerticalGroup(
+            tileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tileLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(value, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+    }
+
     private void refreshDashboard() {
         List<Appointment> mine = bookingService.forPatient(current.getId());
 
@@ -76,20 +102,21 @@ public class PatientDashboardFrame extends javax.swing.JFrame {
         for (int i = 0; i < mine.size(); i++) {
             if (mine.get(i).getStatus() == AppointmentStatus.BOOKED) upcoming++;
         }
-        lblUpcoming.setText("Upcoming appointments: " + upcoming);
+        lblDashTitle.setText("Welcome Back, " + current.getName());
+        lblKpiUpcomingValue.setText(String.valueOf(upcoming));
 
         List<Prescription> rxs = prescriptionService.forPatient(current.getId());
         int activeRx = 0;
         for (int i = 0; i < rxs.size(); i++) {
             if (rxs.get(i).getStatus() == PrescriptionStatus.ACTIVE) activeRx++;
         }
-        lblActiveRx.setText("Active prescriptions: " + activeRx);
+        lblKpiActiveRxValue.setText(String.valueOf(activeRx));
 
         int pendingLab = 0;
         for (assignment.model.LabRequest r : labRequestService.forPatient(current.getId())) {
             if (r.getStatus() == LabRequestStatus.REQUESTED) pendingLab++;
         }
-        lblPendingLab.setText("Pending lab requests: " + pendingLab);
+        lblKpiPendingLabValue.setText(String.valueOf(pendingLab));
 
         javax.swing.table.DefaultTableModel model = new javax.swing.table.DefaultTableModel(
                 new Object[]{"Appointment ID", "Date/Time", "Doctor", "Department", "Status"}, 0) {
@@ -494,7 +521,6 @@ public class PatientDashboardFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblAllergies;
     private javax.swing.JLabel lblApptMessage;
     private javax.swing.JLabel lblApptTitle;
-    private javax.swing.JLabel lblActiveRx;
     private javax.swing.JLabel lblBloodType;
     private javax.swing.JLabel lblBookDate;
     private javax.swing.JLabel lblBookingMessage;
@@ -503,6 +529,16 @@ public class PatientDashboardFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblComment;
     private javax.swing.JLabel lblCurrentPassword;
     private javax.swing.JLabel lblDashTitle;
+    private javax.swing.JLabel lblDashSub;
+    private javax.swing.JPanel pnlKpiUpcoming;
+    private javax.swing.JLabel lblKpiUpcomingLabel;
+    private javax.swing.JLabel lblKpiUpcomingValue;
+    private javax.swing.JPanel pnlKpiActiveRx;
+    private javax.swing.JLabel lblKpiActiveRxLabel;
+    private javax.swing.JLabel lblKpiActiveRxValue;
+    private javax.swing.JPanel pnlKpiPendingLab;
+    private javax.swing.JLabel lblKpiPendingLabLabel;
+    private javax.swing.JLabel lblKpiPendingLabValue;
     private javax.swing.JLabel lblDirectDoctorId;
     private javax.swing.JLabel lblDoctorRating;
     private javax.swing.JLabel lblEmail;
@@ -511,13 +547,11 @@ public class PatientDashboardFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblHistoryTitle;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNewPassword;
-    private javax.swing.JLabel lblPendingLab;
     private javax.swing.JLabel lblPhone;
     private javax.swing.JLabel lblProfileMessage;
     private javax.swing.JLabel lblProfileTitle;
     private javax.swing.JLabel lblRescheduleDate;
     private javax.swing.JLabel lblRescheduleTime;
-    private javax.swing.JLabel lblUpcoming;
     private javax.swing.JLabel lblVisitRating;
     private javax.swing.JPanel pnlContent;
     private javax.swing.JPanel pnlSidebar;
@@ -568,12 +602,20 @@ public class PatientDashboardFrame extends javax.swing.JFrame {
         btnNavProfile = new javax.swing.JToggleButton();
         btnLogout = new javax.swing.JButton();
         pnlContent = new javax.swing.JPanel();
+        pnlContent.setBackground(new java.awt.Color(250, 250, 248));
 
         cardDashboard = new javax.swing.JPanel();
         lblDashTitle = new javax.swing.JLabel();
-        lblUpcoming = new javax.swing.JLabel();
-        lblActiveRx = new javax.swing.JLabel();
-        lblPendingLab = new javax.swing.JLabel();
+        lblDashSub = new javax.swing.JLabel();
+        pnlKpiUpcoming = new javax.swing.JPanel();
+        lblKpiUpcomingLabel = new javax.swing.JLabel();
+        lblKpiUpcomingValue = new javax.swing.JLabel();
+        pnlKpiActiveRx = new javax.swing.JPanel();
+        lblKpiActiveRxLabel = new javax.swing.JLabel();
+        lblKpiActiveRxValue = new javax.swing.JLabel();
+        pnlKpiPendingLab = new javax.swing.JPanel();
+        lblKpiPendingLabLabel = new javax.swing.JLabel();
+        lblKpiPendingLabValue = new javax.swing.JLabel();
         scrollUpcoming = new javax.swing.JScrollPane();
         tblUpcoming = new javax.swing.JTable();
 
@@ -655,7 +697,7 @@ public class PatientDashboardFrame extends javax.swing.JFrame {
 
         lblBrand.setFont(new java.awt.Font("Segoe UI", 1, 16));
         lblBrand.setForeground(new java.awt.Color(11, 61, 42));
-        lblBrand.setText("⊕  APU Medical");
+        lblBrand.setText("APU Medical");
 
         btnNavDashboard.setSelected(true);
         btnNavDashboard.setText("Dashboard");
@@ -735,11 +777,42 @@ public class PatientDashboardFrame extends javax.swing.JFrame {
         pnlContent.setLayout(new java.awt.CardLayout());
 
         // ---- Dashboard card ----
-        lblDashTitle.setFont(new java.awt.Font("Segoe UI", 1, 18));
-        lblDashTitle.setText("Dashboard");
-        lblUpcoming.setText("Upcoming appointments: 0");
-        lblActiveRx.setText("Active prescriptions: 0");
-        lblPendingLab.setText("Pending lab requests: 0");
+        cardDashboard.setBackground(new java.awt.Color(250, 250, 248));
+
+        lblDashTitle.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        lblDashTitle.setForeground(new java.awt.Color(22, 24, 26));
+        lblDashTitle.setText("Welcome Back");
+
+        lblDashSub.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        lblDashSub.setForeground(new java.awt.Color(139, 147, 140));
+        lblDashSub.setText("Here's what's happening with your care today.");
+
+        pnlKpiUpcoming.setBackground(new java.awt.Color(255, 255, 255));
+        lblKpiUpcomingLabel.setForeground(new java.awt.Color(139, 147, 140));
+        lblKpiUpcomingLabel.setText("Upcoming Appointments");
+        lblKpiUpcomingValue.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        lblKpiUpcomingValue.setText("0");
+        buildKpiTile(pnlKpiUpcoming, lblKpiUpcomingLabel, lblKpiUpcomingValue);
+
+        pnlKpiActiveRx.setBackground(new java.awt.Color(255, 255, 255));
+        lblKpiActiveRxLabel.setForeground(new java.awt.Color(139, 147, 140));
+        lblKpiActiveRxLabel.setText("Active Prescriptions");
+        lblKpiActiveRxValue.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        lblKpiActiveRxValue.setText("0");
+        buildKpiTile(pnlKpiActiveRx, lblKpiActiveRxLabel, lblKpiActiveRxValue);
+
+        pnlKpiPendingLab.setBackground(new java.awt.Color(255, 255, 255));
+        lblKpiPendingLabLabel.setForeground(new java.awt.Color(139, 147, 140));
+        lblKpiPendingLabLabel.setText("Pending Lab Requests");
+        lblKpiPendingLabValue.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        lblKpiPendingLabValue.setText("0");
+        buildKpiTile(pnlKpiPendingLab, lblKpiPendingLabLabel, lblKpiPendingLabValue);
+
+        tblUpcoming.setGridColor(new java.awt.Color(233, 234, 230));
+        tblUpcoming.setShowVerticalLines(false);
+        tblUpcoming.setRowHeight(30);
+        tblUpcoming.setSelectionBackground(new java.awt.Color(233, 244, 238));
+        tblUpcoming.setSelectionForeground(new java.awt.Color(22, 24, 26));
         scrollUpcoming.setViewportView(tblUpcoming);
 
         javax.swing.GroupLayout cardDashboardLayout = new javax.swing.GroupLayout(cardDashboard);
@@ -749,26 +822,31 @@ public class PatientDashboardFrame extends javax.swing.JFrame {
             .addGroup(cardDashboardLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(cardDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDashTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUpcoming, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblActiveRx, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPendingLab, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(scrollUpcoming, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE))
+                    .addComponent(lblDashTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDashSub, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(cardDashboardLayout.createSequentialGroup()
+                        .addComponent(pnlKpiUpcoming, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
+                        .addComponent(pnlKpiActiveRx, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
+                        .addComponent(pnlKpiPendingLab, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(scrollUpcoming, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE))
                 .addGap(30, 30, 30))
         );
         cardDashboardLayout.setVerticalGroup(
             cardDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cardDashboardLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(lblDashTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addComponent(lblUpcoming, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblDashTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
-                .addComponent(lblActiveRx, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(lblPendingLab, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addComponent(scrollUpcoming, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+                .addComponent(lblDashSub, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(cardDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlKpiUpcoming, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlKpiActiveRx, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlKpiPendingLab, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(scrollUpcoming, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
                 .addGap(20, 20, 20))
         );
         pnlContent.add(cardDashboard, "dashboard");
