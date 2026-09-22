@@ -1,0 +1,1314 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="APU Medical Centre &#183; Doctor Dashboard"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="3"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="pnlSidebar" min="-2" pref="230" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+              <Component id="pnlContent" min="-2" pref="1050" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="pnlSidebar" alignment="0" min="-2" pref="720" max="-2" attributes="0"/>
+          <Component id="pnlContent" alignment="0" pref="720" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="pnlSidebar">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblBrand" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavDashboard" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavAppointments" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavClinical" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavPrescriptions" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavLab" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavProfile" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnLogout" min="-2" pref="198" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="lblBrand" min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="btnNavDashboard" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavAppointments" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavClinical" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavPrescriptions" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavLab" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavProfile" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="btnLogout" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblBrand">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="16" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="2a" green="3d" red="b" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#8853;  APU Medical"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavDashboard">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="Dashboard"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavDashboardActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavAppointments">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="My Appointments"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavAppointmentsActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavClinical">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Log Vitals &amp; Notes"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavClinicalActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavPrescriptions">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Prescriptions"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavPrescriptionsActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavLab">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Lab / Imaging Requests"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavLabActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavProfile">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="My Profile"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavProfileActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnLogout">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#8592; Log out"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLogoutActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pnlContent">
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="cardDashboard">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="dashboard"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblStatUpcoming" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="lblStatActiveRx" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="lblStatPendingLab" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="scrollDashAppts" pref="900" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblStatUpcoming" min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblStatActiveRx" min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblStatPendingLab" min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="scrollDashAppts" pref="580" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblStatUpcoming">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Upcoming appointments: 0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblStatActiveRx">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Active prescriptions issued: 0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblStatPendingLab">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Pending lab requests raised: 0"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="scrollDashAppts">
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tblDashAppts">
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="cardAppointments">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="appointments"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblAppointmentsTitle" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="btnMarkCompleted" min="-2" pref="160" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="btnMarkNoShow" min="-2" pref="160" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="scrollAppointments" pref="900" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblAppointmentsTitle" min="-2" pref="26" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnMarkCompleted" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="btnMarkNoShow" min="-2" pref="30" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="scrollAppointments" pref="580" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblAppointmentsTitle">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="My Appointments"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnMarkCompleted">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="52" green="7a" red="15" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mark Completed"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMarkCompletedActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnMarkNoShow">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="4f" green="4a" red="c2" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mark No-Show"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMarkNoShowActionPerformed"/>
+              </Events>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="scrollAppointments">
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tblAppointments">
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="cardClinical">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="clinical"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="scrollClinical" pref="1000" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="scrollClinical" pref="680" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="scrollClinical">
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="pnlClinicalForm">
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblClinicalTitle" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblPatientIdLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="txtPatientLookup" min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                      <Component id="btnLookupPatient" min="-2" pref="120" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="lblPatientInfo" min="-2" pref="500" max="-2" attributes="0"/>
+                                  <Component id="lblApptIdLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtClinicalApptId" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblVitalsHeader" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblTempLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtTemp" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblSystolicLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtSystolic" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblDiastolicLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtDiastolic" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblHeartRateLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtHeartRate" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblRespRateLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtRespRate" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblSpo2Lbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtSpo2" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblWeightLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtWeight" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblHeightLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtHeight" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="btnLogVitals" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="lblNotesHeader" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblSymptomsLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtSymptoms" min="-2" pref="500" max="-2" attributes="0"/>
+                                  <Component id="lblDiagnosisLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtDiagnosis" min="-2" pref="500" max="-2" attributes="0"/>
+                                  <Component id="lblNotesLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtNotes" min="-2" pref="500" max="-2" attributes="0"/>
+                                  <Component id="btnSaveNote" min="-2" pref="200" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="lblClinicalTitle" min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <Component id="lblPatientIdLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtPatientLookup" min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Component id="btnLookupPatient" min="-2" pref="32" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblPatientInfo" min="-2" pref="20" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="lblApptIdLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtClinicalApptId" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="lblVitalsHeader" min="-2" pref="22" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblTempLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtTemp" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblSystolicLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtSystolic" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblDiastolicLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtDiastolic" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblHeartRateLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtHeartRate" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblRespRateLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtRespRate" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblSpo2Lbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtSpo2" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblWeightLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtWeight" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblHeightLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtHeight" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="btnLogVitals" min="-2" pref="36" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="lblNotesHeader" min="-2" pref="22" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblSymptomsLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtSymptoms" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblDiagnosisLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtDiagnosis" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblNotesLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtNotes" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="btnSaveNote" min="-2" pref="36" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lblClinicalTitle">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="18" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Log Vitals &amp; Notes"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblPatientIdLbl">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="12" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Patient ID"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtPatientLookup">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnLookupPatient">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Look Up"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLookupPatientActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblPatientInfo">
+                      <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="52" green="7a" red="15" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value=" "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblApptIdLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Related Appointment ID (optional)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtClinicalApptId">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblVitalsHeader">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="14" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Vital Signs"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblTempLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Temperature (C)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtTemp">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblSystolicLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="BP Systolic"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtSystolic">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblDiastolicLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="BP Diastolic"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtDiastolic">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblHeartRateLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Heart Rate"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtHeartRate">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRespRateLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Respiratory Rate"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtRespRate">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblSpo2Lbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="SpO2 %"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtSpo2">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblWeightLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Weight (kg)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtWeight">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblHeightLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Height (cm)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtHeight">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnLogVitals">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="52" green="7a" red="15" type="rgb"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Log Vitals"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLogVitalsActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblNotesHeader">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="14" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Consultation Note"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblSymptomsLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Symptoms"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtSymptoms">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblDiagnosisLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Diagnosis"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtDiagnosis">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblNotesLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Notes"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextArea" name="txtNotes">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnSaveNote">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="52" green="7a" red="15" type="rgb"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Save Note"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveNoteActionPerformed"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="cardPrescriptions">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="prescriptions"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="scrollPrescriptions" pref="1000" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="scrollPrescriptions" pref="680" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="scrollPrescriptions">
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="pnlPrescriptionsForm">
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblRxTitle" min="-2" pref="400" max="-2" attributes="0"/>
+                                  <Component id="lblRxPatientLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtRxPatientId" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblRxApptLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtRxApptId" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="btnStartRx" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="lblRxStatus" min="-2" pref="500" max="-2" attributes="0"/>
+                                  <Component id="lblMedHeader" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblDrugLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtDrugName" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblDosageLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtDosage" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblFrequencyLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtFrequency" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblDurationLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtDuration" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblQuantityLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtQuantity" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblInstructionsLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtInstructions" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="btnAddMedication" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="scrollRxItems" pref="900" max="32767" attributes="0"/>
+                                  <Component id="btnFinishRx" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="lblHistoryHeader" min="-2" pref="400" max="-2" attributes="0"/>
+                                  <Component id="scrollRxHistory" pref="900" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="lblRxTitle" min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <Component id="lblRxPatientLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtRxPatientId" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblRxApptLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtRxApptId" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="btnStartRx" min="-2" pref="36" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblRxStatus" min="-2" pref="20" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="lblMedHeader" min="-2" pref="22" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblDrugLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtDrugName" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblDosageLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtDosage" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblFrequencyLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtFrequency" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblDurationLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtDuration" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblQuantityLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtQuantity" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblInstructionsLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtInstructions" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="btnAddMedication" min="-2" pref="36" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="scrollRxItems" pref="150" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="btnFinishRx" min="-2" pref="36" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="lblHistoryHeader" min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="scrollRxHistory" pref="200" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lblRxTitle">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="18" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Prescriptions"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRxPatientLbl">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="12" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Patient ID"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtRxPatientId">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRxApptLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Related Appointment ID (optional)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtRxApptId">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnStartRx">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="52" green="7a" red="15" type="rgb"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Start Prescription"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStartRxActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRxStatus">
+                      <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="52" green="7a" red="15" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value=" "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblMedHeader">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="14" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Add Medication"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblDrugLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Drug Name"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtDrugName">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblDosageLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Dosage"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtDosage">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblFrequencyLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Frequency"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtFrequency">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblDurationLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Duration Days"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtDuration">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblQuantityLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Quantity"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtQuantity">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblInstructionsLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Instructions"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtInstructions">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnAddMedication">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Add Medication"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddMedicationActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="scrollRxItems">
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="tblRxItems">
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JButton" name="btnFinishRx">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Finish Prescription"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFinishRxActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblHistoryHeader">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="14" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Prescription History (for entered Patient ID)"/>
+                      </Properties>
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="scrollRxHistory">
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="tblRxHistory">
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="cardLab">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="lab"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="scrollLab" pref="1000" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="scrollLab" pref="680" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="scrollLab">
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="pnlLabForm">
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblLabTitle" min="-2" pref="400" max="-2" attributes="0"/>
+                                  <Component id="lblLabPatientLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtLabPatientId" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblLabApptLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtLabApptId" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblLabTypeLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="cboLabType" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblLabReasonLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtLabReason" min="-2" pref="500" max="-2" attributes="0"/>
+                                  <Component id="btnRaiseRequest" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="lblLabHistoryHeader" min="-2" pref="400" max="-2" attributes="0"/>
+                                  <Component id="scrollLabHistory" pref="900" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="lblLabTitle" min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <Component id="lblLabPatientLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtLabPatientId" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblLabApptLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtLabApptId" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblLabTypeLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="cboLabType" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblLabReasonLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtLabReason" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="btnRaiseRequest" min="-2" pref="36" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="lblLabHistoryHeader" min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="scrollLabHistory" pref="300" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lblLabTitle">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="18" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Lab / Imaging Requests"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblLabPatientLbl">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="12" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Patient ID"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtLabPatientId">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblLabApptLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Related Appointment ID (optional)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtLabApptId">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblLabTypeLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Test Type"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cboLabType">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblLabReasonLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Clinical Reason"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtLabReason">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnRaiseRequest">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="52" green="7a" red="15" type="rgb"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Raise Request"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRaiseRequestActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblLabHistoryHeader">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="14" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Requests I&apos;ve Raised"/>
+                      </Properties>
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="scrollLabHistory">
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="tblLabHistory">
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="cardProfile">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="profile"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="scrollProfile" pref="1000" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="scrollProfile" pref="680" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="scrollProfile">
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="pnlProfileForm">
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblProfileTitle" min="-2" pref="400" max="-2" attributes="0"/>
+                                  <Component id="lblNameLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtProfileName" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblPhoneLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtProfilePhone" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblEmailLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtProfileEmail" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblAddressLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtProfileAddress" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblGenderLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="cboProfileGender" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblSpecLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtSpecialization" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="chkAvailable" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="btnSaveProfile" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="lblProfileStatus" min="-2" pref="400" max="-2" attributes="0"/>
+                                  <Component id="lblPasswordHeader" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblCurrentPwLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtCurrentPassword" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="lblNewPwLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="txtNewPassword" min="-2" pref="320" max="-2" attributes="0"/>
+                                  <Component id="btnChangePassword" min="-2" pref="220" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="lblProfileTitle" min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <Component id="lblNameLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtProfileName" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblPhoneLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtProfilePhone" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblEmailLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtProfileEmail" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblAddressLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtProfileAddress" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblGenderLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="cboProfileGender" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblSpecLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtSpecialization" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="chkAvailable" min="-2" pref="24" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="btnSaveProfile" min="-2" pref="36" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblProfileStatus" min="-2" pref="20" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="lblPasswordHeader" min="-2" pref="22" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblCurrentPwLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtCurrentPassword" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblNewPwLbl" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtNewPassword" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="btnChangePassword" min="-2" pref="36" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lblProfileTitle">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="18" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="My Profile"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblNameLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Full Name"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtProfileName">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblPhoneLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Phone"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtProfilePhone">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblEmailLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Email"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtProfileEmail">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblAddressLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Address"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtProfileAddress">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblGenderLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Gender"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cboProfileGender">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblSpecLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Specialization"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtSpecialization">
+                    </Component>
+                    <Component class="javax.swing.JCheckBox" name="chkAvailable">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Available for new bookings"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnSaveProfile">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="52" green="7a" red="15" type="rgb"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Save Changes"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveProfileActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblProfileStatus">
+                      <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="52" green="7a" red="15" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value=" "/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblPasswordHeader">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="14" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Change Password"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblCurrentPwLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Current Password"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JPasswordField" name="txtCurrentPassword">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblNewPwLbl">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="New Password (min 6)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JPasswordField" name="txtNewPassword">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnChangePassword">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Change Password"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChangePasswordActionPerformed"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
