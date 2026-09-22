@@ -19,10 +19,15 @@ public class MedicalHistoryService {
     private final LabRequestService labRequestService = new LabRequestService();
 
     public String historyReport(String patientId) {
-        Patient patient = Database.patients.stream()
-                .filter(p -> p.getId().equalsIgnoreCase(patientId == null ? "" : patientId.trim()))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("No such patient: " + patientId));
+        String key = (patientId == null) ? "" : patientId.trim();
+        Patient patient = null;
+        for (Patient p : Database.patients) {
+            if (p.getId().equalsIgnoreCase(key)) {
+                patient = p;
+                break;
+            }
+        }
+        if (patient == null) throw new IllegalArgumentException("No such patient: " + patientId);
 
         StringBuilder sb = new StringBuilder();
         sb.append("=====================================================\n");

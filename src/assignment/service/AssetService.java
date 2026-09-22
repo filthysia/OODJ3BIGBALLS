@@ -5,8 +5,8 @@ import assignment.model.AssetType;
 import assignment.model.HospitalAsset;
 import assignment.util.IdGenerator;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /** Use-case: Admin Staff manages and allocates physical hospital assets. */
 public class AssetService {
@@ -19,22 +19,26 @@ public class AssetService {
 
     public HospitalAsset findById(String id) {
         String key = (id == null) ? "" : id.trim();
-        return Database.assets.stream()
-                .filter(a -> a.getAssetId().equalsIgnoreCase(key))
-                .findFirst()
-                .orElse(null);
+        for (HospitalAsset a : Database.assets) {
+            if (a.getAssetId().equalsIgnoreCase(key)) return a;
+        }
+        return null;
     }
 
     public List<HospitalAsset> byType(AssetType type) {
-        return Database.assets.stream()
-                .filter(a -> a.getType() == type)
-                .collect(Collectors.toList());
+        List<HospitalAsset> result = new ArrayList<>();
+        for (HospitalAsset a : Database.assets) {
+            if (a.getType() == type) result.add(a);
+        }
+        return result;
     }
 
     public List<HospitalAsset> availableByType(AssetType type) {
-        return Database.assets.stream()
-                .filter(a -> a.getType() == type && a.getStatus() == AssetStatus.AVAILABLE)
-                .collect(Collectors.toList());
+        List<HospitalAsset> result = new ArrayList<>();
+        for (HospitalAsset a : Database.assets) {
+            if (a.getType() == type && a.getStatus() == AssetStatus.AVAILABLE) result.add(a);
+        }
+        return result;
     }
 
     public HospitalAsset create(String name, AssetType type, String location, int capacity) {
@@ -45,8 +49,10 @@ public class AssetService {
         if (capacity < 0)
             throw new IllegalArgumentException("Capacity cannot be negative");
 
-        String id = IdGenerator.next("AST", Database.assets.stream()
-                .map(HospitalAsset::getAssetId).collect(Collectors.toList()));
+        List<String> existingIds = new ArrayList<>();
+        for (HospitalAsset a : Database.assets) existingIds.add(a.getAssetId());
+        String id = IdGenerator.next("AST", existingIds);
+
         HospitalAsset a = new HospitalAsset(id, name.trim(), type,
                 location == null ? "" : location.trim(), capacity, AssetStatus.AVAILABLE, null);
         Database.assets.add(a);
@@ -79,7 +85,7 @@ public class AssetService {
     /** Allocate an asset to a department. */
     public void allocate(String id, String departmentCode) {
         HospitalAsset a = require(id);
-        if (departmentService.findByCode(departmentCode).isEmpty())
+        if (departmentService.findByCode(departmentCode) == null)
             throw new IllegalArgumentException("No such department: " + departmentCode);
         if (a.getStatus() == AssetStatus.MAINTENANCE || a.getStatus() == AssetStatus.RETIRED)
             throw new IllegalStateException("Asset is " + a.getStatus() + " and cannot be allocated");

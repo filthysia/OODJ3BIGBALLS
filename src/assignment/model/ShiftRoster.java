@@ -66,7 +66,13 @@ public class ShiftRoster {
     }
 
     public boolean removeShift(String shiftId) {
-        return shifts.removeIf(s -> s.getShiftId().equals(shiftId));
+        for (int i = 0; i < shifts.size(); i++) {
+            if (shifts.get(i).getShiftId().equals(shiftId)) {
+                shifts.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
 
     public String toCsv() {

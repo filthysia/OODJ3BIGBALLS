@@ -26,12 +26,23 @@ public class HospitalApp {
             System.out.println("0. Exit");
             choice = ConsoleIO.readInt("Select role: ");
             switch (choice) {
-                case 1 -> new MedicalManagerApp().start();
-                case 2 -> new AdminStaffApp().start();
-                case 3 -> new DoctorApp().start();
-                case 4 -> new PatientApp().start();
-                case 0 -> System.out.println("Goodbye.");
-                default -> System.out.println("Invalid choice.");
+                case 1:
+                    new MedicalManagerApp().start();
+                    break;
+                case 2:
+                    new AdminStaffApp().start();
+                    break;
+                case 3:
+                    new DoctorApp().start();
+                    break;
+                case 4:
+                    new PatientApp().start();
+                    break;
+                case 0:
+                    System.out.println("Goodbye.");
+                    break;
+                default:
+                    System.out.println("Invalid choice.");
             }
         } while (choice != 0);
     }

@@ -4,7 +4,6 @@ import assignment.model.ClinicConfig;
 import assignment.model.InsuranceNetwork;
 
 import java.util.List;
-import java.util.Optional;
 
 /** Use-case: Admin Staff configures base consultation rates and accepted insurance networks. */
 public class BillingConfigService {
@@ -36,17 +35,19 @@ public class BillingConfigService {
         return Database.insuranceNetworks;
     }
 
-    public Optional<InsuranceNetwork> findNetwork(String code) {
+    /** @return the network with this code, or {@code null} if none matches. */
+    public InsuranceNetwork findNetwork(String code) {
         String key = (code == null) ? "" : code.trim();
-        return Database.insuranceNetworks.stream()
-                .filter(n -> n.getCode().equalsIgnoreCase(key))
-                .findFirst();
+        for (InsuranceNetwork n : Database.insuranceNetworks) {
+            if (n.getCode().equalsIgnoreCase(key)) return n;
+        }
+        return null;
     }
 
     public InsuranceNetwork addNetwork(String code, String name, double coveragePercent) {
         String c = (code == null) ? "" : code.trim().toUpperCase();
         if (c.isBlank()) throw new IllegalArgumentException("Network code is required");
-        if (findNetwork(c).isPresent())
+        if (findNetwork(c) != null)
             throw new IllegalArgumentException("Network already exists: " + c);
         checkCoverage(coveragePercent);
         InsuranceNetwork n = new InsuranceNetwork(c, (name == null || name.isBlank()) ? c : name.trim(),
@@ -57,8 +58,8 @@ public class BillingConfigService {
     }
 
     public void updateNetwork(String code, String name, Double coveragePercent, Boolean active) {
-        InsuranceNetwork n = findNetwork(code)
-                .orElseThrow(() -> new IllegalArgumentException("No such network: " + code));
+        InsuranceNetwork n = findNetwork(code);
+        if (n == null) throw new IllegalArgumentException("No such network: " + code);
         if (name != null && !name.isBlank()) n.setName(name.trim());
         if (coveragePercent != null) {
             checkCoverage(coveragePercent);
@@ -69,8 +70,8 @@ public class BillingConfigService {
     }
 
     public void removeNetwork(String code) {
-        InsuranceNetwork n = findNetwork(code)
-                .orElseThrow(() -> new IllegalArgumentException("No such network: " + code));
+        InsuranceNetwork n = findNetwork(code);
+        if (n == null) throw new IllegalArgumentException("No such network: " + code);
         Database.insuranceNetworks.remove(n);
         Database.saveInsuranceNetworks();
     }

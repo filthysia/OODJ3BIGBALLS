@@ -4,6 +4,7 @@ import assignment.model.Appointment;
 import assignment.model.ConsultationNote;
 import assignment.model.Doctor;
 import assignment.model.Gender;
+import assignment.model.LabRequest;
 import assignment.model.LabTestType;
 import assignment.model.Patient;
 import assignment.model.Person;
@@ -43,11 +44,11 @@ public class DoctorApp {
         String id = ConsoleIO.line("Doctor ID : ");
         String pw = ConsoleIO.line("Password  : ");
         Person p = accountService.authenticate(UserRole.DOCTOR, id, pw);
-        if (!(p instanceof Doctor doc)) {
+        if (!(p instanceof Doctor)) {
             System.out.println("Login failed.");
             return;
         }
-        current = doc;
+        current = (Doctor) p;
 
         int choice;
         do {
@@ -61,13 +62,26 @@ public class DoctorApp {
             choice = ConsoleIO.readInt("Choice: ");
             try {
                 switch (choice) {
-                    case 1 -> profileMenu();
-                    case 2 -> appointmentMenu();
-                    case 3 -> clinicalMenu();
-                    case 4 -> prescriptionMenu();
-                    case 5 -> labRequestMenu();
-                    case 0 -> System.out.println("Logged out.");
-                    default -> System.out.println("Invalid choice.");
+                    case 1:
+                        profileMenu();
+                        break;
+                    case 2:
+                        appointmentMenu();
+                        break;
+                    case 3:
+                        clinicalMenu();
+                        break;
+                    case 4:
+                        prescriptionMenu();
+                        break;
+                    case 5:
+                        labRequestMenu();
+                        break;
+                    case 0:
+                        System.out.println("Logged out.");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
                 }
             } catch (RuntimeException ex) {
                 System.out.println("! " + ex.getMessage());
@@ -120,16 +134,18 @@ public class DoctorApp {
             c = ConsoleIO.readInt("Choice: ");
             try {
                 switch (c) {
-                    case 1 -> {
+                    case 1:
                         bookingService.markCompleted(ConsoleIO.line("Appointment ID: "));
                         System.out.println("Marked completed.");
-                    }
-                    case 2 -> {
+                        break;
+                    case 2:
                         bookingService.markNoShow(ConsoleIO.line("Appointment ID: "));
                         System.out.println("Marked no-show.");
-                    }
-                    case 0 -> { }
-                    default -> System.out.println("Invalid choice.");
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
                 }
             } catch (RuntimeException ex) {
                 System.out.println("! " + ex.getMessage());
@@ -140,10 +156,15 @@ public class DoctorApp {
     // ---------- 3. vitals + notes ----------
     private void clinicalMenu() {
         String patientId = ConsoleIO.line("Patient ID: ");
-        Patient patient = Database.patients.stream()
-                .filter(x -> x.getId().equalsIgnoreCase(patientId.trim()))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("No such patient: " + patientId));
+        String key = patientId.trim();
+        Patient patient = null;
+        for (Patient x : Database.patients) {
+            if (x.getId().equalsIgnoreCase(key)) {
+                patient = x;
+                break;
+            }
+        }
+        if (patient == null) throw new IllegalArgumentException("No such patient: " + patientId);
         System.out.println("Patient: " + patient.getName()
                 + "  blood=" + patient.getBloodType() + "  allergies=" + patient.getAllergies());
 
@@ -207,7 +228,7 @@ public class DoctorApp {
         System.out.println("Test types: BLOOD_TEST, URINE_TEST, XRAY, CT_SCAN, MRI, ULTRASOUND");
         LabTestType type = LabTestType.fromString(ConsoleIO.line("Type: "));
         String reason = ConsoleIO.line("Clinical reason: ");
-        var r = labRequestService.raise(patientId, current.getId(), appointmentId, type, reason);
+        LabRequest r = labRequestService.raise(patientId, current.getId(), appointmentId, type, reason);
         System.out.println("Raised " + r.getRequestId() + " (" + r.getStatus()
                 + ") - Admin Staff will schedule it onto a " + type.getRequiredAsset() + ".");
     }

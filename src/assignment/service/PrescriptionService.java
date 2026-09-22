@@ -1,25 +1,33 @@
 package assignment.service;
 
+import assignment.model.Patient;
 import assignment.model.Prescription;
 import assignment.model.PrescriptionItem;
 import assignment.model.PrescriptionStatus;
 import assignment.util.IdGenerator;
 
 import java.time.LocalDate;
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /** Use-case: a doctor issues digital medication prescriptions to a patient's record. */
 public class PrescriptionService {
 
     public Prescription issue(String patientId, String doctorId, String appointmentId) {
         String key = (patientId == null) ? "" : patientId.trim();
-        if (Database.patients.stream().noneMatch(p -> p.getId().equalsIgnoreCase(key)))
-            throw new IllegalArgumentException("No such patient: " + patientId);
+        boolean patientExists = false;
+        for (Patient p : Database.patients) {
+            if (p.getId().equalsIgnoreCase(key)) {
+                patientExists = true;
+                break;
+            }
+        }
+        if (!patientExists) throw new IllegalArgumentException("No such patient: " + patientId);
 
-        String id = IdGenerator.next("RX", Database.prescriptions.stream()
-                .map(Prescription::getPrescriptionId).collect(Collectors.toList()));
+        List<String> existingIds = new ArrayList<>();
+        for (Prescription rx : Database.prescriptions) existingIds.add(rx.getPrescriptionId());
+        String id = IdGenerator.next("RX", existingIds);
+
         Prescription rx = new Prescription(id, key, doctorId, blank(appointmentId),
                 LocalDate.now(), PrescriptionStatus.ACTIVE);
         Database.prescriptions.add(rx);
@@ -37,8 +45,10 @@ public class PrescriptionService {
         if (durationDays < 0 || quantity < 0)
             throw new IllegalArgumentException("Duration and quantity cannot be negative");
 
-        String id = IdGenerator.next("PI", Database.prescriptionItems.stream()
-                .map(PrescriptionItem::getItemId).collect(Collectors.toList()));
+        List<String> existingIds = new ArrayList<>();
+        for (PrescriptionItem it : Database.prescriptionItems) existingIds.add(it.getItemId());
+        String id = IdGenerator.next("PI", existingIds);
+
         PrescriptionItem item = new PrescriptionItem(id, rx.getPrescriptionId(), drugName.trim(),
                 nz(dosage), nz(frequency), durationDays, quantity, nz(instructions));
         Database.prescriptionItems.add(item);
@@ -62,18 +72,29 @@ public class PrescriptionService {
     }
 
     public List<Prescription> forPatient(String patientId) {
-        return Database.prescriptions.stream()
-                .filter(p -> p.getPatientId().equalsIgnoreCase(patientId))
-                .sorted(Comparator.comparing(Prescription::getIssuedDate).reversed())
-                .collect(Collectors.toList());
+        List<Prescription> result = new ArrayList<>();
+        for (Prescription p : Database.prescriptions) {
+            if (p.getPatientId().equalsIgnoreCase(patientId)) result.add(p);
+        }
+        // insertion sort by issued date, newest first
+        for (int i = 1; i < result.size(); i++) {
+            Prescription current = result.get(i);
+            int j = i - 1;
+            while (j >= 0 && result.get(j).getIssuedDate().isBefore(current.getIssuedDate())) {
+                result.set(j + 1, result.get(j));
+                j--;
+            }
+            result.set(j + 1, current);
+        }
+        return result;
     }
 
     private Prescription require(String id) {
         String key = (id == null) ? "" : id.trim();
-        return Database.prescriptions.stream()
-                .filter(p -> p.getPrescriptionId().equalsIgnoreCase(key))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("No such prescription: " + id));
+        for (Prescription p : Database.prescriptions) {
+            if (p.getPrescriptionId().equalsIgnoreCase(key)) return p;
+        }
+        throw new IllegalArgumentException("No such prescription: " + id);
     }
 
     private static String blank(String s) { return (s == null || s.isBlank()) ? null : s.trim(); }

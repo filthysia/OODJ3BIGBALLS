@@ -5,12 +5,12 @@ import assignment.model.HospitalAsset;
 import assignment.model.LabRequest;
 import assignment.model.LabRequestStatus;
 import assignment.model.LabTestType;
+import assignment.model.Patient;
 import assignment.util.IdGenerator;
 
 import java.time.LocalDate;
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Use-case: a doctor issues requests to Admin Staff for lab tests, X-rays or
@@ -25,13 +25,21 @@ public class LabRequestService {
     public LabRequest raise(String patientId, String doctorId, String appointmentId,
                             LabTestType type, String clinicalReason) {
         String key = (patientId == null) ? "" : patientId.trim();
-        if (Database.patients.stream().noneMatch(p -> p.getId().equalsIgnoreCase(key)))
-            throw new IllegalArgumentException("No such patient: " + patientId);
+        boolean patientExists = false;
+        for (Patient p : Database.patients) {
+            if (p.getId().equalsIgnoreCase(key)) {
+                patientExists = true;
+                break;
+            }
+        }
+        if (!patientExists) throw new IllegalArgumentException("No such patient: " + patientId);
         if (type == null)
             throw new IllegalArgumentException("Test type is required");
 
-        String id = IdGenerator.next("LR", Database.labRequests.stream()
-                .map(LabRequest::getRequestId).collect(Collectors.toList()));
+        List<String> existingIds = new ArrayList<>();
+        for (LabRequest r : Database.labRequests) existingIds.add(r.getRequestId());
+        String id = IdGenerator.next("LR", existingIds);
+
         LabRequest r = new LabRequest(id, key, doctorId, blank(appointmentId), type, LocalDate.now(),
                 LabRequestStatus.REQUESTED, null, nz(clinicalReason), "");
         Database.labRequests.add(r);
@@ -81,25 +89,47 @@ public class LabRequestService {
     }
 
     public List<LabRequest> byStatus(LabRequestStatus status) {
-        return Database.labRequests.stream()
-                .filter(r -> r.getStatus() == status)
-                .sorted(Comparator.comparing(LabRequest::getRequestedDate))
-                .collect(Collectors.toList());
+        List<LabRequest> result = new ArrayList<>();
+        for (LabRequest r : Database.labRequests) {
+            if (r.getStatus() == status) result.add(r);
+        }
+        sortByRequestedDate(result, false);
+        return result;
     }
 
     public List<LabRequest> forPatient(String patientId) {
-        return Database.labRequests.stream()
-                .filter(r -> r.getPatientId().equalsIgnoreCase(patientId))
-                .sorted(Comparator.comparing(LabRequest::getRequestedDate).reversed())
-                .collect(Collectors.toList());
+        List<LabRequest> result = new ArrayList<>();
+        for (LabRequest r : Database.labRequests) {
+            if (r.getPatientId().equalsIgnoreCase(patientId)) result.add(r);
+        }
+        sortByRequestedDate(result, true);
+        return result;
+    }
+
+    private void sortByRequestedDate(List<LabRequest> list, boolean descending) {
+        for (int i = 1; i < list.size(); i++) {
+            LabRequest current = list.get(i);
+            int j = i - 1;
+            while (j >= 0 && shouldSwap(list.get(j), current, descending)) {
+                list.set(j + 1, list.get(j));
+                j--;
+            }
+            list.set(j + 1, current);
+        }
+    }
+
+    private boolean shouldSwap(LabRequest earlier, LabRequest current, boolean descending) {
+        return descending
+                ? earlier.getRequestedDate().isBefore(current.getRequestedDate())
+                : earlier.getRequestedDate().isAfter(current.getRequestedDate());
     }
 
     private LabRequest require(String id) {
         String key = (id == null) ? "" : id.trim();
-        return Database.labRequests.stream()
-                .filter(r -> r.getRequestId().equalsIgnoreCase(key))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("No such lab request: " + id));
+        for (LabRequest r : Database.labRequests) {
+            if (r.getRequestId().equalsIgnoreCase(key)) return r;
+        }
+        throw new IllegalArgumentException("No such lab request: " + id);
     }
 
     private static String blank(String s) { return (s == null || s.isBlank()) ? null : s.trim(); }

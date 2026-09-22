@@ -1,12 +1,10 @@
 package assignment.util;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.UncheckedIOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,24 +15,37 @@ public final class FileHandler {
 
     /** Reads every line of a file. Returns an empty list if the file does not exist. */
     public static List<String> readLines(String path) {
-        Path p = Paths.get(path);
-        if (Files.notExists(p)) return new ArrayList<>();
-        try {
-            return new ArrayList<>(Files.readAllLines(p, StandardCharsets.UTF_8));
+        List<String> lines = new ArrayList<>();
+        File file = new File(path);
+        if (!file.exists()) return lines;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line = reader.readLine();
+            while (line != null) {
+                lines.add(line);
+                line = reader.readLine();
+            }
         } catch (IOException e) {
-            throw new UncheckedIOException("Failed to read " + path, e);
+            throw new RuntimeException("Failed to read " + path, e);
         }
+        return lines;
     }
 
     /** Overwrites a file with the supplied lines, creating parent folders as needed. */
     public static void writeLines(String path, List<String> lines) {
-        Path p = Paths.get(path);
-        try {
-            if (p.getParent() != null) Files.createDirectories(p.getParent());
-            Files.write(p, lines, StandardCharsets.UTF_8,
-                    StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+        File file = new File(path);
+        File parent = file.getParentFile();
+        if (parent != null && !parent.exists()) {
+            parent.mkdirs();
+        }
+
+        try (FileWriter writer = new FileWriter(file, false)) {
+            for (String line : lines) {
+                writer.write(line);
+                writer.write(System.lineSeparator());
+            }
         } catch (IOException e) {
-            throw new UncheckedIOException("Failed to write " + path, e);
+            throw new RuntimeException("Failed to write " + path, e);
         }
     }
 

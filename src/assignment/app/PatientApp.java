@@ -1,11 +1,14 @@
 package assignment.app;
 
 import assignment.model.Appointment;
+import assignment.model.AppointmentStatus;
 import assignment.model.Doctor;
 import assignment.model.Feedback;
 import assignment.model.Gender;
 import assignment.model.Patient;
 import assignment.model.Person;
+import assignment.model.Prescription;
+import assignment.model.PrescriptionItem;
 import assignment.model.Slot;
 import assignment.model.UserRole;
 import assignment.service.AccountService;
@@ -18,6 +21,7 @@ import assignment.service.SeedData;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /** Console module for the Patient role. */
@@ -42,11 +46,11 @@ public class PatientApp {
         String id = ConsoleIO.line("Patient ID : ");
         String pw = ConsoleIO.line("Password   : ");
         Person p = accountService.authenticate(UserRole.PATIENT, id, pw);
-        if (!(p instanceof Patient patient)) {
+        if (!(p instanceof Patient)) {
             System.out.println("Login failed.");
             return;
         }
-        current = patient;
+        current = (Patient) p;
 
         int choice;
         do {
@@ -59,12 +63,23 @@ public class PatientApp {
             choice = ConsoleIO.readInt("Choice: ");
             try {
                 switch (choice) {
-                    case 1 -> profileMenu();
-                    case 2 -> bookingMenu();
-                    case 3 -> historyMenu();
-                    case 4 -> feedbackMenu();
-                    case 0 -> System.out.println("Logged out.");
-                    default -> System.out.println("Invalid choice.");
+                    case 1:
+                        profileMenu();
+                        break;
+                    case 2:
+                        bookingMenu();
+                        break;
+                    case 3:
+                        historyMenu();
+                        break;
+                    case 4:
+                        feedbackMenu();
+                        break;
+                    case 0:
+                        System.out.println("Logged out.");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
                 }
             } catch (RuntimeException ex) {
                 System.out.println("! " + ex.getMessage());
@@ -121,20 +136,25 @@ public class PatientApp {
             c = ConsoleIO.readInt("Choice: ");
             try {
                 switch (c) {
-                    case 1 -> browseAndBook();
-                    case 2 -> {
+                    case 1:
+                        browseAndBook();
+                        break;
+                    case 2: {
                         String aid = ConsoleIO.line("Appointment ID: ");
                         LocalDate d = ConsoleIO.readDate("New date (YYYY-MM-DD): ");
                         LocalTime t = ConsoleIO.readTime("New start time (HH:MM): ");
                         Appointment a = bookingService.reschedule(aid, d, t);
                         System.out.println("Moved to " + a.getDateTime());
+                        break;
                     }
-                    case 3 -> {
+                    case 3:
                         bookingService.cancel(ConsoleIO.line("Appointment ID: "));
                         System.out.println("Cancelled.");
-                    }
-                    case 0 -> { }
-                    default -> System.out.println("Invalid choice.");
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
                 }
             } catch (RuntimeException ex) {
                 System.out.println("! " + ex.getMessage());
@@ -168,20 +188,23 @@ public class PatientApp {
         System.out.println();
         System.out.println(historyService.historyReport(current.getId()));
         if (ConsoleIO.confirm("Show full prescription detail?")) {
-            prescriptionService.forPatient(current.getId()).forEach(rx -> {
+            for (Prescription rx : prescriptionService.forPatient(current.getId())) {
                 System.out.println(rx);
-                rx.getItems().forEach(it -> System.out.println("     " + it));
-            });
+                for (PrescriptionItem it : rx.getItems()) System.out.println("     " + it);
+            }
         }
     }
 
     // ---------- 4. feedback ----------
     private void feedbackMenu() {
         System.out.println("\nYour completed visits:");
-        bookingService.forPatient(current.getId()).stream()
-                .filter(a -> a.getStatus().name().equals("COMPLETED"))
-                .forEach(a -> System.out.printf("  %-9s %s  Dr %s%n",
-                        a.getAppointmentId(), a.getDateTime(), a.getDoctorId()));
+        List<Appointment> completed = new ArrayList<>();
+        for (Appointment a : bookingService.forPatient(current.getId())) {
+            if (a.getStatus() == AppointmentStatus.COMPLETED) completed.add(a);
+        }
+        for (Appointment a : completed) {
+            System.out.printf("  %-9s %s  Dr %s%n", a.getAppointmentId(), a.getDateTime(), a.getDoctorId());
+        }
 
         String appointmentId = ConsoleIO.line("Appointment ID (blank to rate a doctor directly): ");
         String doctorId = appointmentId.isBlank() ? ConsoleIO.line("Doctor ID: ") : null;

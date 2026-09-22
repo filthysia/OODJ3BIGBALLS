@@ -5,7 +5,6 @@ import assignment.model.DepartmentStatus;
 import assignment.model.Doctor;
 
 import java.util.List;
-import java.util.Optional;
 
 /** Use-case: create or update specialised clinical departments (e.g. Cardiology). */
 public class DepartmentService {
@@ -14,11 +13,14 @@ public class DepartmentService {
         return Database.departments;
     }
 
-    public Optional<Department> findByCode(String code) {
-        if (code == null) return Optional.empty();
-        return Database.departments.stream()
-                .filter(d -> d.getCode().equalsIgnoreCase(code.trim()))
-                .findFirst();
+    /** @return the department with this code, or {@code null} if none matches. */
+    public Department findByCode(String code) {
+        if (code == null) return null;
+        String key = code.trim();
+        for (Department d : Database.departments) {
+            if (d.getCode().equalsIgnoreCase(key)) return d;
+        }
+        return null;
     }
 
     /** Creates a new department. The code must be unique (case-insensitive). */
@@ -26,7 +28,7 @@ public class DepartmentService {
         if (code == null || code.isBlank())
             throw new IllegalArgumentException("Department code is required");
         String normalised = code.trim().toUpperCase();
-        if (findByCode(normalised).isPresent())
+        if (findByCode(normalised) != null)
             throw new IllegalArgumentException("Department code already exists: " + normalised);
         if (name == null || name.isBlank())
             throw new IllegalArgumentException("Department name is required");
@@ -70,9 +72,11 @@ public class DepartmentService {
     public void removeDoctor(String code, String doctorId) {
         Department d = requireDept(code);
         d.removeDoctor(doctorId);
-        Database.doctors.stream()
-                .filter(x -> x.getId().equals(doctorId) && d.getCode().equalsIgnoreCase(x.getDepartmentCode()))
-                .forEach(x -> x.setDepartmentCode(null));
+        for (Doctor x : Database.doctors) {
+            if (x.getId().equals(doctorId) && d.getCode().equalsIgnoreCase(x.getDepartmentCode())) {
+                x.setDepartmentCode(null);
+            }
+        }
         Database.saveDepartments();
         Database.saveDoctors();
     }
@@ -86,14 +90,16 @@ public class DepartmentService {
     }
 
     private Department requireDept(String code) {
-        return findByCode(code)
-                .orElseThrow(() -> new IllegalArgumentException("No such department: " + code));
+        Department d = findByCode(code);
+        if (d == null) throw new IllegalArgumentException("No such department: " + code);
+        return d;
     }
 
     private Doctor requireDoctor(String doctorId) {
-        return Database.doctors.stream()
-                .filter(x -> x.getId().equalsIgnoreCase(doctorId == null ? "" : doctorId.trim()))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("No such doctor: " + doctorId));
+        String key = (doctorId == null) ? "" : doctorId.trim();
+        for (Doctor x : Database.doctors) {
+            if (x.getId().equalsIgnoreCase(key)) return x;
+        }
+        throw new IllegalArgumentException("No such doctor: " + doctorId);
     }
 }

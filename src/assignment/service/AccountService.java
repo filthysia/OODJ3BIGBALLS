@@ -18,12 +18,23 @@ public class AccountService {
 
     /** @return the matching person when id + password are correct, otherwise {@code null}. */
     public Person authenticate(UserRole role, String id, String password) {
-        Person p = switch (role) {
-            case ADMIN_STAFF -> find(Database.adminStaff, id);
-            case MEDICAL_MANAGER -> find(Database.managers, id);
-            case DOCTOR -> find(Database.doctors, id);
-            case PATIENT -> find(Database.patients, id);
-        };
+        Person p;
+        switch (role) {
+            case ADMIN_STAFF:
+                p = find(Database.adminStaff, id);
+                break;
+            case MEDICAL_MANAGER:
+                p = find(Database.managers, id);
+                break;
+            case DOCTOR:
+                p = find(Database.doctors, id);
+                break;
+            case PATIENT:
+                p = find(Database.patients, id);
+                break;
+            default:
+                p = null;
+        }
         return (p != null && p.getPassword().equals(password)) ? p : null;
     }
 
@@ -60,7 +71,10 @@ public class AccountService {
 
     private <T extends Person> T find(List<T> list, String id) {
         String key = (id == null) ? "" : id.trim();
-        return list.stream().filter(x -> x.getId().equalsIgnoreCase(key)).findFirst().orElse(null);
+        for (T x : list) {
+            if (x.getId().equalsIgnoreCase(key)) return x;
+        }
+        return null;
     }
 
     private boolean set(String s) {

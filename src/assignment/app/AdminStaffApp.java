@@ -43,11 +43,11 @@ public class AdminStaffApp {
         String id = ConsoleIO.line("Staff ID : ");
         String pw = ConsoleIO.line("Password : ");
         Person p = accountService.authenticate(UserRole.ADMIN_STAFF, id, pw);
-        if (!(p instanceof AdminStaff staff)) {
+        if (!(p instanceof AdminStaff)) {
             System.out.println("Login failed.");
             return;
         }
-        current = staff;
+        current = (AdminStaff) p;
 
         int choice;
         do {
@@ -62,14 +62,29 @@ public class AdminStaffApp {
             choice = ConsoleIO.readInt("Choice: ");
             try {
                 switch (choice) {
-                    case 1 -> userMenu();
-                    case 2 -> assignDoctorMenu();
-                    case 3 -> assetMenu();
-                    case 4 -> billingMenu();
-                    case 5 -> labMenu();
-                    case 6 -> profileMenu();
-                    case 0 -> System.out.println("Logged out.");
-                    default -> System.out.println("Invalid choice.");
+                    case 1:
+                        userMenu();
+                        break;
+                    case 2:
+                        assignDoctorMenu();
+                        break;
+                    case 3:
+                        assetMenu();
+                        break;
+                    case 4:
+                        billingMenu();
+                        break;
+                    case 5:
+                        labMenu();
+                        break;
+                    case 6:
+                        profileMenu();
+                        break;
+                    case 0:
+                        System.out.println("Logged out.");
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
                 }
             } catch (RuntimeException ex) {
                 System.out.println("! " + ex.getMessage());
@@ -88,34 +103,42 @@ public class AdminStaffApp {
             c = ConsoleIO.readInt("Choice: ");
             try {
                 switch (c) {
-                    case 1 -> createUser();
-                    case 2 -> {
+                    case 1:
+                        createUser();
+                        break;
+                    case 2: {
                         Person p = userService.requireUser(ConsoleIO.line("User ID: "));
                         printUser(p);
+                        break;
                     }
-                    case 3 -> {
+                    case 3: {
                         String id = ConsoleIO.line("User ID: ");
                         String phone = ConsoleIO.line("New phone (blank=keep)  : ");
                         String email = ConsoleIO.line("New email (blank=keep)  : ");
                         String address = ConsoleIO.line("New address (blank=keep): ");
                         userService.updateContact(id, phone, email, address);
                         System.out.println("Updated.");
+                        break;
                     }
-                    case 4 -> {
+                    case 4: {
                         String id = ConsoleIO.line("User ID: ");
                         String pw = ConsoleIO.line("New password (min 6): ");
                         userService.resetPassword(id, pw);
                         System.out.println("Password reset.");
+                        break;
                     }
-                    case 5 -> {
+                    case 5: {
                         String id = ConsoleIO.line("User ID: ");
                         if (ConsoleIO.confirm("Delete " + id + "?")) {
                             userService.deleteUser(id);
                             System.out.println("Deleted.");
                         }
+                        break;
                     }
-                    case 0 -> { }
-                    default -> System.out.println("Invalid choice.");
+                    case 0:
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
                 }
             } catch (RuntimeException ex) {
                 System.out.println("! " + ex.getMessage());
@@ -135,30 +158,35 @@ public class AdminStaffApp {
         String password = ConsoleIO.line("Initial password (min 6): ");
 
         switch (t) {
-            case 1 -> {
+            case 1: {
                 String desk = ConsoleIO.line("Desk location: ");
                 System.out.println("Created " + userService.createAdminStaff(
                         name, ic, gender, phone, email, address, password, desk).getId());
+                break;
             }
-            case 2 -> {
+            case 2: {
                 String office = ConsoleIO.line("Office location: ");
                 System.out.println("Created " + userService.createMedicalManager(
                         name, ic, gender, phone, email, address, password, office).getId());
+                break;
             }
-            case 3 -> {
+            case 3: {
                 String dept = ConsoleIO.line("Department code (blank=none): ");
                 String spec = ConsoleIO.line("Specialization: ");
                 String mgr = ConsoleIO.line("Medical Manager ID (blank=none): ");
                 System.out.println("Created " + userService.createDoctor(
                         name, ic, gender, phone, email, address, password, dept, spec, mgr).getId());
+                break;
             }
-            case 4 -> {
+            case 4: {
                 String blood = ConsoleIO.line("Blood type: ");
                 String allergies = ConsoleIO.line("Allergies: ");
                 System.out.println("Created " + userService.createPatient(
                         name, ic, gender, phone, email, address, password, blood, allergies).getId());
+                break;
             }
-            default -> System.out.println("Unknown type.");
+            default:
+                System.out.println("Unknown type.");
         }
     }
 
@@ -170,11 +198,13 @@ public class AdminStaffApp {
         System.out.println("  Phone    : " + p.getPhone());
         System.out.println("  Email    : " + p.getEmail());
         System.out.println("  Address  : " + p.getAddress());
-        if (p instanceof Doctor d) {
+        if (p instanceof Doctor) {
+            Doctor d = (Doctor) p;
             System.out.println("  Dept     : " + d.getDepartmentCode());
             System.out.println("  Special. : " + d.getSpecialization());
             System.out.println("  Manager  : " + d.getManagerId());
-        } else if (p instanceof Patient pt) {
+        } else if (p instanceof Patient) {
+            Patient pt = (Patient) p;
             System.out.println("  Blood    : " + pt.getBloodType());
             System.out.println("  Allergies: " + pt.getAllergies());
         }
@@ -209,15 +239,16 @@ public class AdminStaffApp {
             c = ConsoleIO.readInt("Choice: ");
             try {
                 switch (c) {
-                    case 1 -> {
+                    case 1: {
                         String name = ConsoleIO.required("Name: ");
                         AssetType type = AssetType.fromString(ConsoleIO.line(
                                 "Type (CONSULTATION_ROOM/INPATIENT_WARD/LAB/IMAGING_ROOM): "));
                         String loc = ConsoleIO.line("Location: ");
                         int cap = ConsoleIO.readInt("Capacity: ");
                         System.out.println("Added " + assetService.create(name, type, loc, cap).getAssetId());
+                        break;
                     }
-                    case 2 -> {
+                    case 2: {
                         String id = ConsoleIO.line("Asset ID: ");
                         String name = ConsoleIO.line("New name (blank=keep)    : ");
                         String loc = ConsoleIO.line("New location (blank=keep): ");
@@ -227,26 +258,31 @@ public class AdminStaffApp {
                         assetService.update(id, name.isBlank() ? null : name,
                                 loc.isBlank() ? null : loc, cap, status);
                         System.out.println("Updated.");
+                        break;
                     }
-                    case 3 -> {
+                    case 3: {
                         String id = ConsoleIO.line("Asset ID  : ");
                         String dept = ConsoleIO.line("Department: ");
                         assetService.allocate(id, dept);
                         System.out.println("Allocated.");
+                        break;
                     }
-                    case 4 -> {
+                    case 4:
                         assetService.release(ConsoleIO.line("Asset ID: "));
                         System.out.println("Released.");
-                    }
-                    case 5 -> {
+                        break;
+                    case 5: {
                         String id = ConsoleIO.line("Asset ID: ");
                         if (ConsoleIO.confirm("Delete " + id + "?")) {
                             assetService.delete(id);
                             System.out.println("Deleted.");
                         }
+                        break;
                     }
-                    case 0 -> { }
-                    default -> System.out.println("Invalid choice.");
+                    case 0:
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
                 }
             } catch (RuntimeException ex) {
                 System.out.println("! " + ex.getMessage());
@@ -267,26 +303,27 @@ public class AdminStaffApp {
             c = ConsoleIO.readInt("Choice: ");
             try {
                 switch (c) {
-                    case 1 -> {
+                    case 1:
                         billingConfigService.setBaseConsultationRate(ConsoleIO.readDouble("Base rate: "));
                         System.out.println("Saved.");
-                    }
-                    case 2 -> {
+                        break;
+                    case 2:
                         billingConfigService.setFollowUpRate(ConsoleIO.readDouble("Follow-up rate: "));
                         System.out.println("Saved.");
-                    }
-                    case 3 -> {
+                        break;
+                    case 3:
                         billingConfigService.setCurrency(ConsoleIO.line("Currency code: "));
                         System.out.println("Saved.");
-                    }
-                    case 4 -> {
+                        break;
+                    case 4: {
                         String code = ConsoleIO.required("Network code: ");
                         String name = ConsoleIO.line("Network name: ");
                         double cov = ConsoleIO.readDouble("Coverage % (0-100): ");
                         billingConfigService.addNetwork(code, name, cov);
                         System.out.println("Added.");
+                        break;
                     }
-                    case 5 -> {
+                    case 5: {
                         String code = ConsoleIO.line("Network code: ");
                         String name = ConsoleIO.line("New name (blank=keep): ");
                         Double cov = ConsoleIO.readDoubleOrNull("New coverage % (blank=keep): ");
@@ -294,13 +331,16 @@ public class AdminStaffApp {
                         Boolean active = act.isBlank() ? null : act.equalsIgnoreCase("y");
                         billingConfigService.updateNetwork(code, name.isBlank() ? null : name, cov, active);
                         System.out.println("Updated.");
+                        break;
                     }
-                    case 6 -> {
+                    case 6:
                         billingConfigService.removeNetwork(ConsoleIO.line("Network code: "));
                         System.out.println("Removed.");
-                    }
-                    case 0 -> { }
-                    default -> System.out.println("Invalid choice.");
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
                 }
             } catch (RuntimeException ex) {
                 System.out.println("! " + ex.getMessage());
@@ -319,12 +359,17 @@ public class AdminStaffApp {
             c = ConsoleIO.readInt("Choice: ");
             try {
                 switch (c) {
-                    case 1 -> {
+                    case 1: {
                         String rid = ConsoleIO.line("Request ID: ");
-                        LabRequest r = Database.labRequests.stream()
-                                .filter(x -> x.getRequestId().equalsIgnoreCase(rid.trim()))
-                                .findFirst().orElseThrow(() ->
-                                        new IllegalArgumentException("No such request: " + rid));
+                        String ridKey = rid.trim();
+                        LabRequest r = null;
+                        for (LabRequest x : Database.labRequests) {
+                            if (x.getRequestId().equalsIgnoreCase(ridKey)) {
+                                r = x;
+                                break;
+                            }
+                        }
+                        if (r == null) throw new IllegalArgumentException("No such request: " + rid);
                         System.out.println("Available " + r.getType().getRequiredAsset() + " assets:");
                         for (HospitalAsset a : assetService.availableByType(r.getType().getRequiredAsset())) {
                             System.out.println("  " + a);
@@ -332,19 +377,23 @@ public class AdminStaffApp {
                         String aid = ConsoleIO.line("Asset ID: ");
                         labRequestService.schedule(rid, aid);
                         System.out.println("Scheduled.");
+                        break;
                     }
-                    case 2 -> {
+                    case 2: {
                         String rid = ConsoleIO.line("Request ID: ");
                         String notes = ConsoleIO.line("Result notes: ");
                         labRequestService.complete(rid, notes);
                         System.out.println("Completed.");
+                        break;
                     }
-                    case 3 -> {
+                    case 3:
                         labRequestService.cancel(ConsoleIO.line("Request ID: "));
                         System.out.println("Cancelled.");
-                    }
-                    case 0 -> { }
-                    default -> System.out.println("Invalid choice.");
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
                 }
             } catch (RuntimeException ex) {
                 System.out.println("! " + ex.getMessage());

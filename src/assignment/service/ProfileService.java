@@ -7,10 +7,10 @@ import assignment.model.MedicalManager;
 public class ProfileService {
 
     public MedicalManager findById(String id) {
-        return Database.managers.stream()
-                .filter(m -> m.getId().equalsIgnoreCase(id))
-                .findFirst()
-                .orElse(null);
+        for (MedicalManager m : Database.managers) {
+            if (m.getId().equalsIgnoreCase(id)) return m;
+        }
+        return null;
     }
 
     /** Returns the manager when id + password match, otherwise {@code null}. */

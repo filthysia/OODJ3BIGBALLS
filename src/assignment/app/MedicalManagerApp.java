@@ -1,5 +1,6 @@
 package assignment.app;
 
+import assignment.model.Department;
 import assignment.model.DepartmentStatus;
 import assignment.model.Gender;
 import assignment.model.MedicalManager;
@@ -56,13 +57,26 @@ public class MedicalManagerApp {
             System.out.println("0. Logout & exit");
             choice = readInt("Choice: ");
             switch (choice) {
-                case 1 -> editProfileMenu();
-                case 2 -> departmentMenu();
-                case 3 -> rosterMenu();
-                case 4 -> System.out.println(reportService.hospitalMetricsReport());
-                case 5 -> System.out.println(reportService.revenueSummaryReport());
-                case 0 -> System.out.println("Logged out.");
-                default -> System.out.println("Invalid choice.");
+                case 1:
+                    editProfileMenu();
+                    break;
+                case 2:
+                    departmentMenu();
+                    break;
+                case 3:
+                    rosterMenu();
+                    break;
+                case 4:
+                    System.out.println(reportService.hospitalMetricsReport());
+                    break;
+                case 5:
+                    System.out.println(reportService.revenueSummaryReport());
+                    break;
+                case 0:
+                    System.out.println("Logged out.");
+                    break;
+                default:
+                    System.out.println("Invalid choice.");
             }
         } while (choice != 0);
     }
@@ -113,7 +127,7 @@ public class MedicalManagerApp {
         int c;
         do {
             System.out.println("\n--- Departments ---");
-            departmentService.getAll().forEach(d -> System.out.println("  " + d));
+            for (Department d : departmentService.getAll()) System.out.println("  " + d);
             System.out.println("1. Create department");
             System.out.println("2. Update department");
             System.out.println("3. Assign doctor to department");
@@ -123,15 +137,16 @@ public class MedicalManagerApp {
             c = readInt("Choice: ");
             try {
                 switch (c) {
-                    case 1 -> {
+                    case 1: {
                         String code = readLine("Code (e.g. CARD)      : ");
                         String name = readLine("Name (e.g. Cardiology): ");
                         String desc = readLine("Description           : ");
                         double fee = readDouble("Consultation fee (RM): ");
                         departmentService.create(code, name, desc, fee);
                         System.out.println("Created.");
+                        break;
                     }
-                    case 2 -> {
+                    case 2: {
                         String code = readLine("Code to update              : ");
                         String name = readLine("New name (blank=keep)       : ");
                         String desc = readLine("New description (blank=keep): ");
@@ -144,12 +159,21 @@ public class MedicalManagerApp {
                                 desc.isBlank() ? null : desc,
                                 fee, st);
                         System.out.println("Updated.");
+                        break;
                     }
-                    case 3 -> departmentService.assignDoctor(readLine("Dept code: "), readLine("Doctor ID: "));
-                    case 4 -> departmentService.removeDoctor(readLine("Dept code: "), readLine("Doctor ID: "));
-                    case 5 -> departmentService.setHead(readLine("Dept code: "), readLine("Doctor ID: "));
-                    case 0 -> { }
-                    default -> System.out.println("Invalid choice.");
+                    case 3:
+                        departmentService.assignDoctor(readLine("Dept code: "), readLine("Doctor ID: "));
+                        break;
+                    case 4:
+                        departmentService.removeDoctor(readLine("Dept code: "), readLine("Doctor ID: "));
+                        break;
+                    case 5:
+                        departmentService.setHead(readLine("Dept code: "), readLine("Doctor ID: "));
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
                 }
             } catch (RuntimeException ex) {
                 System.out.println("! " + ex.getMessage());
@@ -162,7 +186,7 @@ public class MedicalManagerApp {
         int c;
         do {
             System.out.println("\n--- Shift Rosters ---");
-            rosterService.getAll().forEach(r -> System.out.println("  " + r));
+            for (ShiftRoster r : rosterService.getAll()) System.out.println("  " + r);
             System.out.println("1. Create weekly roster");
             System.out.println("2. Add shift");
             System.out.println("3. Update shift");
@@ -172,22 +196,24 @@ public class MedicalManagerApp {
             c = readInt("Choice: ");
             try {
                 switch (c) {
-                    case 1 -> {
+                    case 1: {
                         String dept = readLine("Dept code: ");
                         LocalDate d = LocalDate.parse(readLine("Any date in target week (YYYY-MM-DD): "));
                         ShiftRoster r = rosterService.createRoster(dept, d, current.getId());
                         System.out.println("Created " + r.getRosterId()
                                 + " for week " + r.getWeekStart() + ".." + r.getWeekEnd());
+                        break;
                     }
-                    case 2 -> {
+                    case 2: {
                         String rid = readLine("Roster ID : ");
                         String doc = readLine("Doctor ID : ");
                         LocalDate d = LocalDate.parse(readLine("Shift date (YYYY-MM-DD): "));
                         ShiftType t = ShiftType.fromString(readLine("Type (MORNING/AFTERNOON/NIGHT): "));
                         Shift s = rosterService.addShift(rid, doc, d, t);
                         System.out.println("Added " + s.getShiftId());
+                        break;
                     }
-                    case 3 -> {
+                    case 3: {
                         String sid = readLine("Shift ID: ");
                         String dStr = readLine("New date (blank=keep)  : ");
                         String tStr = readLine("New type (blank=keep)  : ");
@@ -198,18 +224,25 @@ public class MedicalManagerApp {
                                 null, null,
                                 stStr.isBlank() ? null : ShiftStatus.fromString(stStr));
                         System.out.println("Updated.");
+                        break;
                     }
-                    case 4 -> {
+                    case 4:
                         rosterService.removeShift(readLine("Shift ID: "));
                         System.out.println("Removed.");
-                    }
-                    case 5 -> {
+                        break;
+                    case 5: {
                         List<Shift> shifts = rosterService.shiftsFor(readLine("Roster ID: "));
-                        if (shifts.isEmpty()) System.out.println("(no shifts)");
-                        else shifts.forEach(s -> System.out.println("  " + s));
+                        if (shifts.isEmpty()) {
+                            System.out.println("(no shifts)");
+                        } else {
+                            for (Shift s : shifts) System.out.println("  " + s);
+                        }
+                        break;
                     }
-                    case 0 -> { }
-                    default -> System.out.println("Invalid choice.");
+                    case 0:
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
                 }
             } catch (RuntimeException ex) {
                 System.out.println("! " + ex.getMessage());

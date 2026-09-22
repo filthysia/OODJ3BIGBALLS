@@ -159,72 +159,110 @@ public final class Database {
     // ----- save helpers -----
 
     public static void saveManagers() {
-        writeCsv("medical_managers.txt", managers.stream().map(MedicalManager::toCsv).toList());
+        List<String> lines = new ArrayList<>();
+        for (MedicalManager m : managers) lines.add(m.toCsv());
+        writeCsv("medical_managers.txt", lines);
     }
 
     public static void saveAdminStaff() {
-        writeCsv("admin_staff.txt", adminStaff.stream().map(AdminStaff::toCsv).toList());
+        List<String> lines = new ArrayList<>();
+        for (AdminStaff a : adminStaff) lines.add(a.toCsv());
+        writeCsv("admin_staff.txt", lines);
     }
 
     public static void saveDoctors() {
-        writeCsv("doctors.txt", doctors.stream().map(Doctor::toCsv).toList());
+        List<String> lines = new ArrayList<>();
+        for (Doctor d : doctors) lines.add(d.toCsv());
+        writeCsv("doctors.txt", lines);
     }
 
     public static void savePatients() {
-        writeCsv("patients.txt", patients.stream().map(Patient::toCsv).toList());
+        List<String> lines = new ArrayList<>();
+        for (Patient p : patients) lines.add(p.toCsv());
+        writeCsv("patients.txt", lines);
     }
 
     public static void saveDepartments() {
-        writeCsv("departments.txt", departments.stream().map(Department::toCsv).toList());
+        List<String> lines = new ArrayList<>();
+        for (Department d : departments) lines.add(d.toCsv());
+        writeCsv("departments.txt", lines);
     }
 
     public static void saveRostersAndShifts() {
-        writeCsv("rosters.txt", rosters.stream().map(ShiftRoster::toCsv).toList());
-        writeCsv("shifts.txt", shifts.stream().map(Shift::toCsv).toList());
+        List<String> rosterLines = new ArrayList<>();
+        for (ShiftRoster r : rosters) rosterLines.add(r.toCsv());
+        writeCsv("rosters.txt", rosterLines);
+
+        List<String> shiftLines = new ArrayList<>();
+        for (Shift s : shifts) shiftLines.add(s.toCsv());
+        writeCsv("shifts.txt", shiftLines);
     }
 
     public static void saveAssets() {
-        writeCsv("assets.txt", assets.stream().map(HospitalAsset::toCsv).toList());
+        List<String> lines = new ArrayList<>();
+        for (HospitalAsset a : assets) lines.add(a.toCsv());
+        writeCsv("assets.txt", lines);
     }
 
     public static void saveInsuranceNetworks() {
-        writeCsv("insurance_networks.txt", insuranceNetworks.stream().map(InsuranceNetwork::toCsv).toList());
+        List<String> lines = new ArrayList<>();
+        for (InsuranceNetwork n : insuranceNetworks) lines.add(n.toCsv());
+        writeCsv("insurance_networks.txt", lines);
     }
 
     public static void saveClinicConfig() {
-        writeCsv("clinic_config.txt", List.of(clinicConfig.toCsv()));
+        List<String> lines = new ArrayList<>();
+        lines.add(clinicConfig.toCsv());
+        writeCsv("clinic_config.txt", lines);
     }
 
     public static void saveAppointments() {
-        writeCsv("appointments.txt", appointments.stream().map(Appointment::toCsv).toList());
+        List<String> lines = new ArrayList<>();
+        for (Appointment a : appointments) lines.add(a.toCsv());
+        writeCsv("appointments.txt", lines);
     }
 
     public static void saveInvoices() {
-        writeCsv("invoices.txt", invoices.stream().map(Invoice::toCsv).toList());
+        List<String> lines = new ArrayList<>();
+        for (Invoice i : invoices) lines.add(i.toCsv());
+        writeCsv("invoices.txt", lines);
     }
 
     public static void saveVitals() {
-        writeCsv("vitals.txt", vitals.stream().map(VitalSigns::toCsv).toList());
+        List<String> lines = new ArrayList<>();
+        for (VitalSigns v : vitals) lines.add(v.toCsv());
+        writeCsv("vitals.txt", lines);
     }
 
     public static void saveConsultationNotes() {
-        writeCsv("consultation_notes.txt", consultationNotes.stream().map(ConsultationNote::toCsv).toList());
+        List<String> lines = new ArrayList<>();
+        for (ConsultationNote n : consultationNotes) lines.add(n.toCsv());
+        writeCsv("consultation_notes.txt", lines);
     }
 
     public static void savePrescriptions() {
-        writeCsv("prescriptions.txt", prescriptions.stream().map(Prescription::toCsv).toList());
-        writeCsv("prescription_items.txt", prescriptionItems.stream().map(PrescriptionItem::toCsv).toList());
+        List<String> prescriptionLines = new ArrayList<>();
+        for (Prescription p : prescriptions) prescriptionLines.add(p.toCsv());
+        writeCsv("prescriptions.txt", prescriptionLines);
+
+        List<String> itemLines = new ArrayList<>();
+        for (PrescriptionItem it : prescriptionItems) itemLines.add(it.toCsv());
+        writeCsv("prescription_items.txt", itemLines);
     }
 
     public static void saveLabRequests() {
-        writeCsv("lab_requests.txt", labRequests.stream().map(LabRequest::toCsv).toList());
+        List<String> lines = new ArrayList<>();
+        for (LabRequest r : labRequests) lines.add(r.toCsv());
+        writeCsv("lab_requests.txt", lines);
     }
 
     public static void saveFeedback() {
-        writeCsv("feedback.txt", feedback.stream().map(Feedback::toCsv).toList());
+        List<String> lines = new ArrayList<>();
+        for (Feedback f : feedback) lines.add(f.toCsv());
+        writeCsv("feedback.txt", lines);
     }
 
     private static void writeCsv(String file, List<String> lines) {
-        FileHandler.writeLines(path(file), new ArrayList<>(lines));
+        FileHandler.writeLines(path(file), lines);
     }
 }

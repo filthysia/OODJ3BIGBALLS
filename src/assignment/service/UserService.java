@@ -1,6 +1,7 @@
 package assignment.service;
 
 import assignment.model.AdminStaff;
+import assignment.model.Department;
 import assignment.model.Doctor;
 import assignment.model.Gender;
 import assignment.model.MedicalManager;
@@ -11,7 +12,6 @@ import assignment.util.IdGenerator;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /** Use-case: Admin Staff creates, reads, updates and deletes end users. */
 public class UserService {
@@ -30,7 +30,10 @@ public class UserService {
 
     public Person find(String id) {
         String key = (id == null) ? "" : id.trim();
-        return allUsers().stream().filter(p -> p.getId().equalsIgnoreCase(key)).findFirst().orElse(null);
+        for (Person p : allUsers()) {
+            if (p.getId().equalsIgnoreCase(key)) return p;
+        }
+        return null;
     }
 
     public Person requireUser(String id) {
@@ -64,10 +67,9 @@ public class UserService {
     public Doctor createDoctor(String name, String ic, Gender gender, String phone, String email,
                                String address, String password, String departmentCode,
                                String specialization, String managerId) {
-        if (isSet(departmentCode) && departmentService.findByCode(departmentCode).isEmpty())
+        if (isSet(departmentCode) && departmentService.findByCode(departmentCode) == null)
             throw new IllegalArgumentException("No such department: " + departmentCode);
-        if (isSet(managerId) && Database.managers.stream()
-                .noneMatch(m -> m.getId().equalsIgnoreCase(managerId.trim())))
+        if (isSet(managerId) && !managerExists(managerId))
             throw new IllegalArgumentException("No such medical manager: " + managerId);
 
         String id = IdGenerator.next("DOC", ids(Database.doctors));
@@ -76,10 +78,11 @@ public class UserService {
         Database.doctors.add(d);
         Database.saveDoctors();
         if (d.getDepartmentCode() != null) {
-            departmentService.findByCode(d.getDepartmentCode()).ifPresent(dep -> {
+            Department dep = departmentService.findByCode(d.getDepartmentCode());
+            if (dep != null) {
                 dep.addDoctor(d.getId());
                 Database.saveDepartments();
-            });
+            }
         }
         return d;
     }
@@ -111,58 +114,88 @@ public class UserService {
 
     public void deleteUser(String id) {
         Person p = requireUser(id);
-        switch (p) {
-            case AdminStaff a -> {
-                Database.adminStaff.remove(a);
-                Database.saveAdminStaff();
+        if (p instanceof AdminStaff) {
+            AdminStaff a = (AdminStaff) p;
+            Database.adminStaff.remove(a);
+            Database.saveAdminStaff();
+        } else if (p instanceof MedicalManager) {
+            MedicalManager m = (MedicalManager) p;
+            boolean hasDoctors = false;
+            for (Doctor d : Database.doctors) {
+                if (m.getId().equalsIgnoreCase(d.getManagerId())) {
+                    hasDoctors = true;
+                    break;
+                }
             }
-            case MedicalManager m -> {
-                boolean hasDoctors = Database.doctors.stream()
-                        .anyMatch(d -> m.getId().equalsIgnoreCase(d.getManagerId()));
-                if (hasDoctors)
-                    throw new IllegalStateException("Reassign this manager's doctors before deleting");
-                Database.managers.remove(m);
-                Database.saveManagers();
+            if (hasDoctors)
+                throw new IllegalStateException("Reassign this manager's doctors before deleting");
+            Database.managers.remove(m);
+            Database.saveManagers();
+        } else if (p instanceof Doctor) {
+            Doctor d = (Doctor) p;
+            Database.doctors.remove(d);
+            for (Department dep : Database.departments) {
+                dep.removeDoctor(d.getId());
             }
-            case Doctor d -> {
-                Database.doctors.remove(d);
-                Database.departments.forEach(dep -> dep.removeDoctor(d.getId()));
-                Database.saveDoctors();
-                Database.saveDepartments();
-            }
-            case Patient pt -> {
-                Database.patients.remove(pt);
-                Database.savePatients();
-            }
-            default -> throw new IllegalStateException("Unknown user type");
+            Database.saveDoctors();
+            Database.saveDepartments();
+        } else if (p instanceof Patient) {
+            Patient pt = (Patient) p;
+            Database.patients.remove(pt);
+            Database.savePatients();
+        } else {
+            throw new IllegalStateException("Unknown user type");
         }
     }
 
     // ---------- assign doctors to their Medical Manager ----------
 
     public void assignDoctorToManager(String doctorId, String managerId) {
-        Doctor d = Database.doctors.stream()
-                .filter(x -> x.getId().equalsIgnoreCase(doctorId == null ? "" : doctorId.trim()))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("No such doctor: " + doctorId));
-        MedicalManager m = Database.managers.stream()
-                .filter(x -> x.getId().equalsIgnoreCase(managerId == null ? "" : managerId.trim()))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("No such medical manager: " + managerId));
+        String doctorKey = (doctorId == null) ? "" : doctorId.trim();
+        Doctor d = null;
+        for (Doctor x : Database.doctors) {
+            if (x.getId().equalsIgnoreCase(doctorKey)) {
+                d = x;
+                break;
+            }
+        }
+        if (d == null) throw new IllegalArgumentException("No such doctor: " + doctorId);
+
+        String managerKey = (managerId == null) ? "" : managerId.trim();
+        MedicalManager m = null;
+        for (MedicalManager x : Database.managers) {
+            if (x.getId().equalsIgnoreCase(managerKey)) {
+                m = x;
+                break;
+            }
+        }
+        if (m == null) throw new IllegalArgumentException("No such medical manager: " + managerId);
+
         d.setManagerId(m.getId());
         Database.saveDoctors();
     }
 
     public List<Doctor> doctorsForManager(String managerId) {
-        return Database.doctors.stream()
-                .filter(d -> managerId.equalsIgnoreCase(d.getManagerId()))
-                .collect(Collectors.toList());
+        List<Doctor> result = new ArrayList<>();
+        for (Doctor d : Database.doctors) {
+            if (managerId.equalsIgnoreCase(d.getManagerId())) result.add(d);
+        }
+        return result;
     }
 
     // ---------- helpers ----------
 
+    private boolean managerExists(String managerId) {
+        for (MedicalManager m : Database.managers) {
+            if (m.getId().equalsIgnoreCase(managerId.trim())) return true;
+        }
+        return false;
+    }
+
     private List<String> ids(List<? extends Person> list) {
-        return list.stream().map(Person::getId).collect(Collectors.toList());
+        List<String> result = new ArrayList<>();
+        for (Person p : list) result.add(p.getId());
+        return result;
     }
 
     private static boolean isSet(String s) { return s != null && !s.isBlank(); }

@@ -3,15 +3,17 @@ package assignment.service;
 import assignment.model.Appointment;
 import assignment.model.AppointmentStatus;
 import assignment.model.Department;
+import assignment.model.Doctor;
 import assignment.model.Invoice;
 import assignment.model.PaymentStatus;
+import assignment.model.Shift;
 import assignment.model.ShiftRoster;
 
 import java.time.YearMonth;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.stream.Collectors;
 
 /** Use-case: view analytical reports on hospital metrics and revenue summaries. */
 public class ReportService {
@@ -25,7 +27,10 @@ public class ReportService {
         sb.append("        APU MEDICAL CENTRE  -  HOSPITAL METRICS REPORT\n");
         line(sb);
 
-        long activeDept = Database.departments.stream().filter(Department::isActive).count();
+        int activeDept = 0;
+        for (Department d : Database.departments) {
+            if (d.isActive()) activeDept++;
+        }
         sb.append(String.format("Departments        : %d  (%d active)%n", Database.departments.size(), activeDept));
         sb.append(String.format("Doctors            : %d%n", Database.doctors.size()));
         sb.append(String.format("Patients           : %d%n", Database.patients.size()));
@@ -35,28 +40,32 @@ public class ReportService {
 
         sb.append("\n-- Doctors per department --\n");
         for (Department d : Database.departments) {
-            long docs = Database.doctors.stream()
-                    .filter(x -> d.getCode().equalsIgnoreCase(x.getDepartmentCode()))
-                    .count();
+            int docs = 0;
+            for (Doctor x : Database.doctors) {
+                if (d.getCode().equalsIgnoreCase(x.getDepartmentCode())) docs++;
+            }
             sb.append(String.format("  %-6s %-20s %d doctor(s)%n", d.getCode(), d.getName(), docs));
         }
 
         sb.append("\n-- Appointments by status --\n");
-        Map<AppointmentStatus, Long> byStatus = Database.appointments.stream()
-                .collect(Collectors.groupingBy(Appointment::getStatus, Collectors.counting()));
         for (AppointmentStatus s : AppointmentStatus.values()) {
-            sb.append(String.format("  %-12s %d%n", s, byStatus.getOrDefault(s, 0L)));
+            int count = 0;
+            for (Appointment a : Database.appointments) {
+                if (a.getStatus() == s) count++;
+            }
+            sb.append(String.format("  %-12s %d%n", s, count));
         }
 
         sb.append("\n-- Rostered shifts per department --\n");
         for (Department d : Database.departments) {
-            List<String> rosterIds = Database.rosters.stream()
-                    .filter(r -> r.getDepartmentCode().equalsIgnoreCase(d.getCode()))
-                    .map(ShiftRoster::getRosterId)
-                    .collect(Collectors.toList());
-            long sh = Database.shifts.stream()
-                    .filter(x -> rosterIds.contains(x.getRosterId()))
-                    .count();
+            List<String> rosterIds = new ArrayList<>();
+            for (ShiftRoster r : Database.rosters) {
+                if (r.getDepartmentCode().equalsIgnoreCase(d.getCode())) rosterIds.add(r.getRosterId());
+            }
+            int sh = 0;
+            for (Shift x : Database.shifts) {
+                if (rosterIds.contains(x.getRosterId())) sh++;
+            }
             sb.append(String.format("  %-6s %-20s %d shift(s)%n", d.getCode(), d.getName(), sh));
         }
 
@@ -71,10 +80,12 @@ public class ReportService {
         sb.append("        APU MEDICAL CENTRE  -  REVENUE SUMMARY REPORT\n");
         line(sb);
 
-        double billed = Database.invoices.stream().mapToDouble(Invoice::getAmount).sum();
-        double collected = Database.invoices.stream()
-                .filter(i -> i.getStatus() == PaymentStatus.PAID)
-                .mapToDouble(Invoice::getAmount).sum();
+        double billed = 0;
+        double collected = 0;
+        for (Invoice i : Database.invoices) {
+            billed += i.getAmount();
+            if (i.getStatus() == PaymentStatus.PAID) collected += i.getAmount();
+        }
         double outstanding = billed - collected;
 
         sb.append(String.format("Invoices issued    : %d%n", Database.invoices.size()));
@@ -90,18 +101,27 @@ public class ReportService {
         for (Invoice i : Database.invoices) {
             String key = (i.getDepartmentCode() == null || i.getDepartmentCode().isBlank())
                     ? "-" : i.getDepartmentCode();
-            byDept.merge(key, i.getAmount(), Double::sum);
+            if (byDept.containsKey(key)) {
+                byDept.put(key, byDept.get(key) + i.getAmount());
+            } else {
+                byDept.put(key, i.getAmount());
+            }
         }
         for (Map.Entry<String, Double> e : byDept.entrySet()) {
-            String name = departmentService.findByCode(e.getKey())
-                    .map(Department::getName).orElse(e.getKey());
+            Department dep = departmentService.findByCode(e.getKey());
+            String name = (dep != null) ? dep.getName() : e.getKey();
             sb.append(String.format("  %-6s %-20s RM %,.2f%n", e.getKey(), name, e.getValue()));
         }
 
         sb.append("\n-- Revenue by month (billed) --\n");
         Map<YearMonth, Double> byMonth = new TreeMap<>();
         for (Invoice i : Database.invoices) {
-            byMonth.merge(YearMonth.from(i.getIssueDate()), i.getAmount(), Double::sum);
+            YearMonth ym = YearMonth.from(i.getIssueDate());
+            if (byMonth.containsKey(ym)) {
+                byMonth.put(ym, byMonth.get(ym) + i.getAmount());
+            } else {
+                byMonth.put(ym, i.getAmount());
+            }
         }
         for (Map.Entry<YearMonth, Double> e : byMonth.entrySet()) {
             sb.append(String.format("  %s    RM %,.2f%n", e.getKey(), e.getValue()));
