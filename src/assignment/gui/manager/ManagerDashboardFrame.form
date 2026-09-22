@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="APU Medical Centre &#183; Medical Manager Dashboard"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="3"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="pnlSidebar" min="-2" pref="230" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+              <Component id="pnlContent" min="-2" pref="1050" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="pnlSidebar" alignment="0" min="-2" pref="720" max="-2" attributes="0"/>
+          <Component id="pnlContent" alignment="0" pref="720" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="pnlSidebar">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblBrand" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavDashboard" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavDepartments" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavRosters" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavReports" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnNavProfile" min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="btnLogout" min="-2" pref="198" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="lblBrand" min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="btnNavDashboard" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavDepartments" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavRosters" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavReports" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="btnNavProfile" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="btnLogout" min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblBrand">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="16" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="2a" green="3d" red="b" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#8853;  APU Medical"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavDashboard">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="Dashboard"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavDashboardActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavDepartments">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Departments"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavDepartmentsActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavRosters">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Shift Rosters"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavRostersActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavReports">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Reports"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavReportsActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btnNavProfile">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="My Profile"/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNavProfileActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnLogout">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#8592; Log out"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLogoutActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pnlContent">
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+      <SubComponents>
+
+        <Container class="javax.swing.JPanel" name="cardDashboard">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="dashboard"/>
+            </Constraint>
+          </Constraints>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblDashTitle" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="lblDashDeptCount" min="-2" pref="500" max="-2" attributes="0"/>
+                          <Component id="lblDashDoctorCount" min="-2" pref="500" max="-2" attributes="0"/>
+                          <Component id="lblDashRosterCount" min="-2" pref="500" max="-2" attributes="0"/>
+                          <Component id="lblDashShiftCount" min="-2" pref="500" max="-2" attributes="0"/>
+                          <Component id="scrollDashRosters" pref="960" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblDashTitle" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="lblDashDeptCount" min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Component id="lblDashDoctorCount" min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Component id="lblDashRosterCount" min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Component id="lblDashShiftCount" min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="scrollDashRosters" pref="400" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblDashTitle">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Dashboard"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblDashDeptCount">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="13" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Departments: -"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblDashDoctorCount">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="13" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Doctors managed: -"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblDashRosterCount">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="13" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Rosters: -"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblDashShiftCount">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="13" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Rostered shifts: -"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="scrollDashRosters">
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tblDashRosters">
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+
+        <Container class="javax.swing.JPanel" name="cardDepartments">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="departments"/>
+            </Constraint>
+          </Constraints>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="scrollDeptForm" pref="960" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="scrollDeptForm" pref="680" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="scrollDeptForm">
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="pnlDeptForm">
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblDeptTitle" min="-2" pref="500" max="-2" attributes="0"/>
+                                  <Component id="lblDeptCode" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="txtDeptCode" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="lblDeptName" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="txtDeptName" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="lblDeptDesc" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="txtDeptDesc" min="-2" pref="500" max="-2" attributes="0"/>
+                                  <Component id="lblDeptFee" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="txtDeptFee" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="btnCreateDept" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="scrollDepartments" pref="960" max="32767" attributes="0"/>
+                                  <Component id="lblDeptSelDoctor" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="txtDeptDoctorId" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="btnAssignDoctor" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="btnRemoveDoctor" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="btnSetHead" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="lblDeptNewFee" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="txtDeptNewFee" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="lblDeptNewStatus" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="cboDeptStatus" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="btnUpdateDept" min="-2" pref="260" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="lblDeptTitle" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="lblDeptCode" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtDeptCode" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblDeptName" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtDeptName" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblDeptDesc" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtDeptDesc" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblDeptFee" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtDeptFee" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="btnCreateDept" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="scrollDepartments" min="-2" pref="220" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="lblDeptSelDoctor" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtDeptDoctorId" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="btnAssignDoctor" min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                              <Component id="btnRemoveDoctor" min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                              <Component id="btnSetHead" min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="lblDeptNewFee" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtDeptNewFee" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblDeptNewStatus" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="cboDeptStatus" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="btnUpdateDept" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lblDeptTitle">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="18" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Manage Clinical Departments"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblDeptCode">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Code (e.g. CARD)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtDeptCode">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblDeptName">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Name (e.g. Cardiology)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtDeptName">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblDeptDesc">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Description"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtDeptDesc">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblDeptFee">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Consultation fee (RM)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtDeptFee">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnCreateDept">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="52" green="7a" red="15" type="rgb"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="+ Create Department"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateDeptActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="scrollDepartments">
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="tblDepartments">
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="lblDeptSelDoctor">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Doctor ID (for actions below, acting on the selected department row)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtDeptDoctorId">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnAssignDoctor">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Assign Doctor to Selected Dept"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAssignDoctorActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnRemoveDoctor">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Remove Doctor from Selected Dept"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveDoctorActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnSetHead">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Set Doctor as Head of Selected Dept"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSetHeadActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblDeptNewFee">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Update selected department - new fee (blank=keep)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtDeptNewFee">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblDeptNewStatus">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="New status"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cboDeptStatus">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnUpdateDept">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Update Selected Department"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateDeptActionPerformed"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+
+        <Container class="javax.swing.JPanel" name="cardRosters">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="rosters"/>
+            </Constraint>
+          </Constraints>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="scrollRosterForm" pref="960" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="scrollRosterForm" pref="680" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="scrollRosterForm">
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="pnlRosterForm">
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblRosterTitle" min="-2" pref="500" max="-2" attributes="0"/>
+                                  <Component id="lblRosterDept" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="txtRosterDept" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="lblRosterDate" min="-2" pref="400" max="-2" attributes="0"/>
+                                  <Component id="txtRosterDate" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="btnCreateRoster" min="-2" pref="260" max="-2" attributes="0"/>
+                                  <Component id="scrollRosters" pref="960" max="32767" attributes="0"/>
+                                  <Component id="lblShiftRosterId" min="-2" pref="400" max="-2" attributes="0"/>
+                                  <Component id="txtShiftRosterId" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="btnViewShifts" min="-2" pref="260" max="-2" attributes="0"/>
+                                  <Component id="scrollShiftDetail" pref="960" max="32767" attributes="0"/>
+                                  <Component id="lblShiftDoctor" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="txtShiftDoctorId" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="lblShiftDate" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="txtShiftDate" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="lblShiftType" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="cboShiftType" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="btnAddShift" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="lblUpdateShiftId" min="-2" pref="400" max="-2" attributes="0"/>
+                                  <Component id="txtUpdateShiftId" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="lblUpdateShiftDate" min="-2" pref="400" max="-2" attributes="0"/>
+                                  <Component id="txtUpdateShiftDate" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="lblUpdateShiftType" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="cboUpdateShiftType" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="lblUpdateShiftStatus" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="cboUpdateShiftStatus" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="btnUpdateShift" min="-2" pref="260" max="-2" attributes="0"/>
+                                  <Component id="btnRemoveShift" min="-2" pref="260" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="lblRosterTitle" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="lblRosterDept" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtRosterDept" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblRosterDate" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtRosterDate" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="btnCreateRoster" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="scrollRosters" min="-2" pref="180" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="lblShiftRosterId" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtShiftRosterId" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="btnViewShifts" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="scrollShiftDetail" min="-2" pref="160" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="lblShiftDoctor" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtShiftDoctorId" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblShiftDate" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtShiftDate" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblShiftType" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="cboShiftType" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="btnAddShift" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="lblUpdateShiftId" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtUpdateShiftId" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblUpdateShiftDate" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="txtUpdateShiftDate" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblUpdateShiftType" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="cboUpdateShiftType" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="lblUpdateShiftStatus" min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="cboUpdateShiftStatus" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="btnUpdateShift" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                              <Component id="btnRemoveShift" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lblRosterTitle">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="18" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Shift Rosters"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRosterDept">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Dept code"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtRosterDept">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblRosterDate">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Any date in target week (YYYY-MM-DD)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtRosterDate">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnCreateRoster">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="52" green="7a" red="15" type="rgb"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="+ Create Weekly Roster"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateRosterActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="scrollRosters">
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="tblRosters">
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="lblShiftRosterId">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Roster ID (for all shift actions below)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtShiftRosterId">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnViewShifts">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="View Shifts of Roster"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewShiftsActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="scrollShiftDetail">
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="tblShiftDetail">
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="lblShiftDoctor">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Add shift - Doctor ID"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtShiftDoctorId">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblShiftDate">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Shift date (YYYY-MM-DD)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtShiftDate">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblShiftType">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Type"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cboShiftType">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnAddShift">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Add Shift"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddShiftActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblUpdateShiftId">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Update/remove shift - Shift ID"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtUpdateShiftId">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblUpdateShiftDate">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="New date (blank=keep)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtUpdateShiftDate">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblUpdateShiftType">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="New type (optional)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cboUpdateShiftType">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lblUpdateShiftStatus">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="New status (optional)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="cboUpdateShiftStatus">
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnUpdateShift">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Update Shift"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateShiftActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnRemoveShift">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="4f" green="4a" red="c2" type="rgb"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Remove Shift"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveShiftActionPerformed"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+
+        <Container class="javax.swing.JPanel" name="cardReports">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="reports"/>
+            </Constraint>
+          </Constraints>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblReportsTitle" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="btnShowMetrics" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="btnShowRevenue" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="btnRefreshReport" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="scrollReport" pref="960" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblReportsTitle" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="btnShowMetrics" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Component id="btnShowRevenue" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Component id="btnRefreshReport" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <Component id="scrollReport" pref="500" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblReportsTitle">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Reports"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnShowMetrics">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hospital Metrics Report"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnShowMetricsActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnShowRevenue">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Revenue Summary Report"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnShowRevenueActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnRefreshReport">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Refresh"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRefreshReportActionPerformed"/>
+              </Events>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="scrollReport">
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="txtReport">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Consolas" size="12" style="0"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+
+        <Container class="javax.swing.JPanel" name="cardProfile">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="profile"/>
+            </Constraint>
+          </Constraints>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblProfileTitle" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="lblProfileName" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="txtProfileName" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="lblProfilePhone" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="txtProfilePhone" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="lblProfileEmail" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="txtProfileEmail" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="lblProfileAddress" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="txtProfileAddress" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="lblProfileGender" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="cboProfileGender" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="lblProfileOffice" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="txtProfileOffice" min="-2" pref="400" max="-2" attributes="0"/>
+                          <Component id="btnSaveProfile" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="lblProfileCurrentPw" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="txtProfileCurrentPw" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="lblProfileNewPw" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="txtProfileNewPw" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="btnChangePassword" min="-2" pref="220" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblProfileTitle" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="lblProfileName" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtProfileName" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblProfilePhone" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtProfilePhone" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblProfileEmail" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtProfileEmail" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblProfileAddress" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtProfileAddress" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblProfileGender" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="cboProfileGender" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblProfileOffice" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtProfileOffice" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="btnSaveProfile" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblProfileCurrentPw" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtProfileCurrentPw" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="lblProfileNewPw" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="txtProfileNewPw" min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="btnChangePassword" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblProfileTitle">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="My Profile"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblProfileName">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Full name"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtProfileName">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblProfilePhone">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Phone"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtProfilePhone">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblProfileEmail">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Email"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtProfileEmail">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblProfileAddress">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Address"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtProfileAddress">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblProfileGender">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Gender"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cboProfileGender">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblProfileOffice">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Office location"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtProfileOffice">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnSaveProfile">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="52" green="7a" red="15" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Save Changes"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveProfileActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblProfileCurrentPw">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Current password"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JPasswordField" name="txtProfileCurrentPw">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblProfileNewPw">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="New password (min 6)"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JPasswordField" name="txtProfileNewPw">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnChangePassword">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Change Password"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChangePasswordActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
