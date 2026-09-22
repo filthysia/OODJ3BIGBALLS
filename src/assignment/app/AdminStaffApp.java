@@ -151,7 +151,7 @@ public class AdminStaffApp {
         int t = ConsoleIO.readInt("Choice: ");
         String name = ConsoleIO.required("Full name : ");
         String ic = ConsoleIO.line("IC / passport : ");
-        Gender gender = Gender.fromString(ConsoleIO.line("Gender (MALE/FEMALE/OTHER): "));
+        Gender gender = Gender.fromString(ConsoleIO.line("Gender (MALE/FEMALE): "));
         String phone = ConsoleIO.line("Phone   : ");
         String email = ConsoleIO.line("Email   : ");
         String address = ConsoleIO.line("Address : ");

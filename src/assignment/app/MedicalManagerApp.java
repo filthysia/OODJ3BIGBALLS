@@ -103,7 +103,7 @@ public class MedicalManagerApp {
         String phone = readLine("New phone   : ");
         String email = readLine("New email   : ");
         String address = readLine("New address : ");
-        String genderStr = readLine("New gender (MALE/FEMALE/OTHER): ");
+        String genderStr = readLine("New gender (MALE/FEMALE): ");
         String office = readLine("New office  : ");
         Gender gender = genderStr.isBlank() ? null : Gender.fromString(genderStr);
 

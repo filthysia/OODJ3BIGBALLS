@@ -101,7 +101,7 @@ public class PatientApp {
         String phone = ConsoleIO.line("New phone   : ");
         String email = ConsoleIO.line("New email   : ");
         String address = ConsoleIO.line("New address : ");
-        String genderStr = ConsoleIO.line("New gender (MALE/FEMALE/OTHER): ");
+        String genderStr = ConsoleIO.line("New gender (MALE/FEMALE): ");
         Gender gender = genderStr.isBlank() ? null : Gender.fromString(genderStr);
         accountService.editProfile(current, name, phone, email, address, gender);
 

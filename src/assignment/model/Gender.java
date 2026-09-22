@@ -2,7 +2,7 @@ package assignment.model;
 
 /** Gender of a person recorded in the system. */
 public enum Gender {
-    MALE, FEMALE, OTHER;
+    MALE, FEMALE;
 
     public static Gender fromString(String s) {
         if (s != null) {
@@ -10,6 +10,6 @@ public enum Gender {
                 if (g.name().equalsIgnoreCase(s.trim())) return g;
             }
         }
-        return OTHER;
+        return MALE;
     }
 }
