@@ -1,0 +1,1 @@
+PI0001,RX0001,Panadol,6 Pills a day,2 pills after every major meal,5,35,To be split into the 3 main mail times  breakfast  lunch and diner
